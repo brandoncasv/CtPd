@@ -1,5 +1,7 @@
 {
   "name": "CtPd",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

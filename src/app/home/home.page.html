@@ -1,14 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="more" class="size_More"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">CtPd</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content class="ion-padding">
+  <div>
+    <ion-searchbar animated="true" autocomplete="true"></ion-searchbar>
+    <ion-list>
+      <ion-item >
+        <ion-avatar  >
+          <ion-icon name = "person"></ion-icon>
+        </ion-avatar>
+        <ion-label>Otros</ion-label>
+        <ion-button fill="clear">
+          <ion-icon name="arrow-dropdown-circle"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-avatar>
+          <ion-icon name="logo-freebsd-devil"></ion-icon>
+        </ion-avatar>
+        <ion-label >Amigos</ion-label>
+        <ion-button fill="clear">
+          <ion-icon name="arrow-dropdown-circle"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-avatar>
+          <ion-icon name = "logo-facebook"></ion-icon>
+        </ion-avatar>
+        <ion-label>Social</ion-label>
+        <ion-button fill="clear">
+          <ion-icon name="arrow-dropdown-circle"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
