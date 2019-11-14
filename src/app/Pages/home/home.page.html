@@ -1,7 +1,9 @@
-<ion-header>
+<ion-header class="background">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-icon name="more" class="size_More"></ion-icon>
+      <ion-button>
+        <ion-icon name="more" class="size_More"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title class="ion-text-center">CtPd</ion-title>
   </ion-toolbar>
@@ -16,7 +18,7 @@
           <ion-icon name = "person"></ion-icon>
         </ion-avatar>
         <ion-label>Otros</ion-label>
-        <ion-button fill="clear">
+        <ion-button fill="clear" color="dark">
           <ion-icon name="arrow-dropdown-circle"></ion-icon>
         </ion-button>
       </ion-item>
@@ -25,7 +27,7 @@
           <ion-icon name="logo-freebsd-devil"></ion-icon>
         </ion-avatar>
         <ion-label >Amigos</ion-label>
-        <ion-button fill="clear">
+        <ion-button fill="clear" color="dark">
           <ion-icon name="arrow-dropdown-circle"></ion-icon>
         </ion-button>
       </ion-item>
@@ -34,10 +36,23 @@
           <ion-icon name = "logo-facebook"></ion-icon>
         </ion-avatar>
         <ion-label>Social</ion-label>
-        <ion-button fill="clear">
+        <ion-button fill="clear" color="dark">
           <ion-icon name="arrow-dropdown-circle"></ion-icon>
         </ion-button>
       </ion-item>
     </ion-list>
   </div>
+
+  <div>
+
+  </div>
+  <ion-grid>
+    <ion-row justify-content-end >
+      <ion-col size="2">
+        <ion-fab-button color="light" (click)="create_Contact()">
+          <ion-icon name="add" ></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
