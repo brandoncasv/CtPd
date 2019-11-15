@@ -1,10 +1,20 @@
 ion-header {
-  --ion-background-color:#34495E;
+  --ion-background-color:#000000;
   --ion-text-color: var(--ion-color-light);
+
+}
+ion-header > ion-title {
 }
 
+ion-searchbar {
+  --background: #505050;
+  --color: #ffffff;
+  --icon-color: #ffffff;
+  --placeholder-color: #ffffff;
+  --placeholder-font-weight: 50px;
+}
 ion-content {
-  --ion-background-color: #85929E;
+  --ion-background-color: #000000;
   --ion-text-color: var(--ion-color-light);
 }
 ion-button {

@@ -1,12 +1,18 @@
 ion-header {
-  --ion-background-color:#34495E;
+  --ion-background-color:#000000;
   --ion-text-color: var(--ion-color-light);
 }
 
 ion-content {
-  --ion-background-color: #85929E;
+  --ion-background-color: #000000;
   --ion-text-color: var(--ion-color-light);
 }
-ion-grid {
-  --ion-text-color: green();
+
+ion-icon {
+  width: 5vw;
+  height: 5vh
+}
+ion-button {
+  --color: #FFFFFF;
+  --padding:start;
 }
