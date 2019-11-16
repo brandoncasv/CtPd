@@ -1,5 +1,5 @@
-<ion-header class="background">
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar class="ion-padding">
     <ion-searchbar animated="true" autocomplete="true"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -21,25 +21,54 @@
           <ion-icon name="logo-freebsd-devil"></ion-icon>
         </ion-avatar>
         <ion-label >Amigos</ion-label>
-        <ion-button fill="clear" color="success">
+        <ion-button fill="clear" color="success" (click)="amigos_Show()">
           <ion-icon name="arrow-dropdown-circle"></ion-icon>
         </ion-button>
       </ion-item>
+      <ng-container *ngFor="let contact of contacts">
+        <div *ngIf="contact.Circulo === 'Social' && amigos_Truee === true">
+          <ion-item >
+            <ion-avatar slot="start">
+              <ion-img src="./assets/images/avatar.png"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{contact.Nombre}}</h2>
+              <h3>{{contact.Correo}}</h3>
+            </ion-label>
+          </ion-item>
+        </div>
+      </ng-container>
+
+
       <ion-item>
         <ion-avatar>
           <ion-icon name = "logo-facebook"></ion-icon>
         </ion-avatar>
         <ion-label>Social</ion-label>
-        <ion-button fill="clear" color="success">
+        <ion-button fill="clear" color="success" (click)="social_Show()">
           <ion-icon name="arrow-dropdown-circle"></ion-icon>
         </ion-button>
       </ion-item>
+
+      <ng-container *ngFor="let contact of contacts">
+        <div *ngIf="contact.Circulo === 'Amigos' && amigos_Truee === true">
+          <ion-item >
+            <ion-avatar slot="start">
+              <ion-img src="./assets/images/avatar.png"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{contact.Nombre}}</h2>
+              <h3>{{contact.Correo}}</h3>
+            </ion-label>
+          </ion-item>
+        </div>
+      </ng-container>
     </ion-list>
   </div>
 
-  <div>
 
-  </div>
+
+
   <ion-grid>
     <ion-row justify-content-end >
       <ion-col size="2">
@@ -49,4 +78,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>
