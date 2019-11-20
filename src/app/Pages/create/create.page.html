@@ -14,16 +14,12 @@
 
 <ion-content class="ion-padding">
   <ion-grid>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size="5">
-        <ion-avatar>
-          <ion-img src="./assets/images/avatar.png"></ion-img>
-          <ion-img [src]="photo"></ion-img>
-        </ion-avatar>
-      </ion-col>
+    <ion-row  class="ion-justify-content-center">
+      <ion-avatar>
+        <ion-img [src]="photo"></ion-img>
+      </ion-avatar>
     </ion-row>
     <ion-row class="ion-justify-content-center" >
-
       <ion-button color="dark" (click)="take_a_Photo()">Agregar foto</ion-button>
     </ion-row>
 

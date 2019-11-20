@@ -22,6 +22,9 @@ ion-button {
   --ion-background-color: #85929E;
 
 }
-.position {
-
+ion-checkbox {
+  --background: #fff;
+  --background-checked: #fff;
+  --checkmark-color: var(--ion-color-primary);
+  --border-style: none;
 }

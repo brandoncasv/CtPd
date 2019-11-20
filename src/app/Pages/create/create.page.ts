@@ -9,17 +9,17 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 })
 export class CreatePage  {
 
-  photo: SafeResourceUrl;
+  photo: any;
   constructor(private sanitizer: DomSanitizer) { }
 
  async  take_a_Photo() {
     const image = await Plugins.Camera.getPhoto({
       quality: 100,
       allowEditing: false,
-      resultType: CameraResultType.DataUrl,
+      resultType: CameraResultType.Uri,
       source: CameraSource.Camera
     });
-    this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
+    this.photo = image.webPath;
  }
 
 }

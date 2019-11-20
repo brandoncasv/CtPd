@@ -15,7 +15,9 @@ export class HomePage {
 
     contacts: Contacto[] = [];
     amigos_Truee: boolean = false;
+    trabajo_Truee: boolean = false;
     social_Truee: boolean = false;
+
 
 
     //data: Observable<any[]>;
@@ -47,6 +49,7 @@ export class HomePage {
                    Prefijo: String(data['Prefijo']),
                    SitioWeb: String(data['SitioWeb']),
                    Direccion: direccion,
+                   Apodo: String(data['Apodo']),
                };
           this.contacts.push(contact);
          // this.friends_Contacts = this.contacts.filter(friends => friends.Circulo === 'Amigos');
@@ -59,12 +62,6 @@ export class HomePage {
     this.router.navigateByUrl('/create');
   }
 
-  amigos_Show() {
-    this.amigos_Truee = this.amigos_Truee === false;
-  }
-    social_Show() {
-        this.social_Truee = this.social_Truee === false;
-    }
 
 }
 
