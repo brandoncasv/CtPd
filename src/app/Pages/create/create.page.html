@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title >Nuevo contacto</ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button [disabled]="!create_Form.valid" type="submit" (click)="new_contact(create_Form.value)">
         <ion-icon name="checkmark"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -23,96 +23,101 @@
       <ion-button color="dark" (click)="take_a_Photo()">Agregar foto</ion-button>
     </ion-row>
 
-  <ion-row>
-    <ion-col size="1">
-      <ion-icon name="contact">
-    </ion-icon></ion-col>
-    <ion-col>
-      <ion-input placeholder="Nombre"></ion-input>
-    </ion-col>
-  </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name=""></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-input placeholder="Segundo nombre"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name=""></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-input placeholder="Apellido"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name=""></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-input placeholder="Sufijo"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name=""></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-input placeholder="Apodo"></ion-input>
-      </ion-col>
-    </ion-row>
 
+    <form [formGroup]="create_Form">
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="contact">
+          </ion-icon></ion-col>
+        <ion-col>
+          <ion-input placeholder="Nombre"
+          formControlName="nombre"></ion-input>
+        </ion-col>
+      </ion-row>
+     <!-- <ion-row>
+        <ion-col size="1">
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-input placeholder="Segundo nombre"></ion-input>
+        </ion-col>
+      </ion-row>-->
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-input placeholder="Apellido" formControlName="apellidos"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-input placeholder="Correo" formControlName="correo"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-input placeholder="Apodo" formControlName="apodo"></ion-input>
+        </ion-col>
+      </ion-row>
+        <p>{{create_Form.status}}</p>
 
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name="call"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir teléfono</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name="mail"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir correo electrónico</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name="pin"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir direccion</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name="calendar"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir fechas importantes</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name="globe"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize" >Sitio web</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row >
-      <ion-col size="1">
-        <ion-icon name="bookmarks"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button size="small" color="dark" expand="full" class="ion-text-capitalize">Notas</ion-button>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="call"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir teléfono</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="mail"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir correo electrónico</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="pin"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir direccion</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="calendar"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir fechas importantes</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="globe"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize" >Sitio web</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col size="1">
+          <ion-icon name="bookmarks"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button size="small" color="dark" expand="full" class="ion-text-capitalize">Notas</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
 
   </ion-grid>
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import  { AngularFirestore } from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import  { Contacto, direccion} from "../Interfaces/contacto";
 
 @Injectable({
@@ -7,7 +7,48 @@ import  { Contacto, direccion} from "../Interfaces/contacto";
 })
 export class ContactoService {
 
+  all_Contacts: Contacto[] = [];
+  all_ids: string = [];
+  all_Data: AngularFirestoreCollection<any[]>;
   constructor(private fs: AngularFirestore) {
+    this.all_Data = this.fs.collection<any>('Contacto');
+    this.all_Data.snapshotChanges().subscribe(actions => actions.map(a =>{
+      const data = a.payload.doc.data() as any;
+      const id = a.payload.doc.id;
+      let direccion: direccion= {
+        CP: String(data['Direccion']['CP']),
+        Calle: String(data['Direccion']['Calle']),
+        Ciudad: String(data['Direccion']['Ciudad']),
+        Estado: String(data['Direccion']['Estado']),
+        Numero: Number(data['Direccion']['Numero']),
+
+
+      };
+      let contact =
+          {
+            Nombre: String(data['Nombre']),
+            Apellidos: String(data['Apellidos']),
+            Circulo: String(data['Circulo']),
+            Correo: String(data['Correo']),
+            Prefijo: String(data['Prefijo']),
+            SitioWeb: String(data['SitioWeb']),
+            Direccion: direccion,
+            Apodo: String(data['Apodo']),
+          };
+      this.all_Contacts.push(contact);
+      // this.friends_Contacts = this.contacts.filter(friends => friends.Circulo === 'Amigos');
+      console.log(this.all_Contacts);
+      console.log(id)
+
+    }));
 
   }
+
+  public create_Contact(data: {Nombre: string, Apellidos: string, Correo: string, Apodo: string}) {
+    return this.fs.collection('Contacto').add(data)
+  }
+  public get_Contacts() {
+  }
+  public update_Contact() {}
+  public delete_Contact() {}
 }

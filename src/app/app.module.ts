@@ -13,11 +13,17 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import  { environment } from '../environments/environment'
 
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebaseConfig),
-  AngularFirestoreModule.enablePersistence()],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  AngularFireModule.initializeApp(environment.firebaseConfig),
+  AngularFirestoreModule.enablePersistence(),
+  ReactiveFormsModule,
+  FormsModule,
+  ],
   providers: [
     StatusBar,
     SplashScreen,
