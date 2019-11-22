@@ -16,6 +16,7 @@ export class HomePage {
 
   constructor(private router: Router,
               private  contac_service: ContactoService) {
+
   }
 
   create_Contact() {

@@ -34,20 +34,12 @@
           formControlName="nombre"></ion-input>
         </ion-col>
       </ion-row>
-     <!-- <ion-row>
-        <ion-col size="1">
-          <ion-icon name=""></ion-icon>
-        </ion-col>
-        <ion-col>
-          <ion-input placeholder="Segundo nombre"></ion-input>
-        </ion-col>
-      </ion-row>-->
       <ion-row>
         <ion-col size="1">
           <ion-icon name=""></ion-icon>
         </ion-col>
         <ion-col>
-          <ion-input placeholder="Apellido" formControlName="apellidos"></ion-input>
+          <ion-input placeholder="Apellidos" formControlName="apellidos"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -66,16 +58,58 @@
           <ion-input placeholder="Apodo" formControlName="apodo"></ion-input>
         </ion-col>
       </ion-row>
-        <p>{{create_Form.status}}</p>
-
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-input placeholder="Circulo" formControlName="circulo" ></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-input placeholder="Prefijo" formControlName="prefijo" ></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name=""></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-input placeholder="Sitio Web" formControlName="sitioWeb" ></ion-input>
+        </ion-col>
+      </ion-row>
+        <!--<p>{{create_Form.status}}</p>-->
       <ion-row>
         <ion-col size="1">
           <ion-icon name="call"></ion-icon>
         </ion-col>
         <ion-col>
-          <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir teléfono</ion-button>
+          <ion-button fill="clear" expand="full" size="small"
+                      class="ion-text-capitalize" (click)="add_Controltel()">Añadir teléfono</ion-button>
         </ion-col>
+
+        <ion-list lines="none" *ngIf="tel_Counter > 0" class="ion-padding">
+          <form [formGroup]="tel_Form">
+            <ion-item *ngFor="let control of tel_Form.controls | keyvalue">
+              <ion-input type="number" placeholder="Ingresa el número telefónico"
+                         [formControlName]="control.key" ></ion-input>
+              <ion-select>
+                <ion-select-option value="movil">Movil</ion-select-option>
+                <ion-select-option value="casa">Casa</ion-select-option>
+                <ion-select-option value="trabajo">Trabajo</ion-select-option>
+              </ion-select>
+              <ion-button color="light" (click)="delete_Controltel(control)">
+                <ion-icon name="close-circle-outline" color="dark"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </form>
+        </ion-list>
       </ion-row>
+
       <ion-row>
         <ion-col size="1">
           <ion-icon name="mail"></ion-icon>
@@ -84,14 +118,35 @@
           <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir correo electrónico</ion-button>
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="1">
           <ion-icon name="pin"></ion-icon>
         </ion-col>
         <ion-col>
-          <ion-button fill="clear" expand="full" size="small" class="ion-text-capitalize">Añadir direccion</ion-button>
+          <ion-button fill="clear" expand="full" size="small"
+                      class="ion-text-capitalize" (click)="add_Controldir()">Añadir direccion</ion-button>
         </ion-col>
+
+        <ion-list lines="none" *ngIf="dir_Counter> 0" class="ion-padding">
+          <form [formGroup]="dir_Form">
+            <ion-item *ngFor="let control of dir_Form.controls | keyvalue">
+              <ion-input type="number" placeholder="Codigo Postal"
+                         [formControlName]="control.key" ></ion-input>
+              <ion-select>
+                <ion-select-option value="movil">Movil</ion-select-option>
+                <ion-select-option value="casa">Casa</ion-select-option>
+                <ion-select-option value="trabajo">Trabajo</ion-select-option>
+              </ion-select>
+              <ion-button color="light" (click)="delete_Controldir(control)">
+                <ion-icon name="close-circle-outline" color="dark"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </form>
+        </ion-list>
       </ion-row>
+
+
       <ion-row>
         <ion-col size="1">
           <ion-icon name="calendar"></ion-icon>

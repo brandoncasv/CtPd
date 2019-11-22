@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pruebas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list lines="none" *ngIf="playerCount > 0">
+    <form [formGroup]="myForm">
+      <ion-item *ngFor="let control of myForm.controls | keyvalue">
+        <ion-input required type="text" [formControlName]="control.key" placeHolder="player name..."></ion-input>
+        <ion-icon (click)="removeControl(control)" name="close-circle"></ion-icon>
+      </ion-item>
+    </form>
+  </ion-list>
+  <ion-button expand="full" color="light"
+              (click)="addControl()" color="danger"
+                >Add Player</ion-button>
+</ion-content>

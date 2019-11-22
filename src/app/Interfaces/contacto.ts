@@ -5,7 +5,6 @@ export interface Contacto {
     Circulo: string;
     Correo: string;
     Prefijo: string;
-    Direccion: direccion;
 }
 
 
