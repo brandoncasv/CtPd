@@ -15,11 +15,13 @@ import { Router } from "@angular/router";
 export class CreatePage  {
 
   private create_Form: FormGroup;
-  private tel_Form: FormGroup;
   private tel_Counter: number = 0;
   private dir_Form: FormGroup;
   private dir_Counter: number = 0;
   private photo: any;
+  private tel_Form: FormGroup;
+
+
 
   constructor(private sanitizer: DomSanitizer,
               private  builder: FormBuilder,
@@ -33,7 +35,8 @@ export class CreatePage  {
           apodo: [''],
           circulo: [''],
           prefijo: [''],
-          sitioWeb: ['', Validators.minLength(10)]
+          sitioWeb: ['', Validators.minLength(10)],
+
       });
 
       this.tel_Form = this.builder.group({

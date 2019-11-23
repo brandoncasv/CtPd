@@ -9,14 +9,15 @@ import { ContactoService } from '../../Services/contacto.service';
 })
 export class HomePage {
 
-    contacts: Contacto[] = this.contac_service.all_Contacts;
+    contacts: Contacto[] = [];
     amigos_Truee: boolean = false;
     trabajo_Truee: boolean = false;
     social_Truee: boolean = false;
 
   constructor(private router: Router,
               private  contac_service: ContactoService) {
-
+      this.contacts = [];
+      this.contacts = this.contac_service.get_Contacts();
   }
 
   create_Contact() {

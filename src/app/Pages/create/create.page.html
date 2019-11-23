@@ -129,19 +129,26 @@
         </ion-col>
 
         <ion-list lines="none" *ngIf="dir_Counter> 0" class="ion-padding">
-          <form [formGroup]="dir_Form">
-            <ion-item *ngFor="let control of dir_Form.controls | keyvalue">
-              <ion-input type="number" placeholder="Codigo Postal"
-                         [formControlName]="control.key" ></ion-input>
-              <ion-select>
-                <ion-select-option value="movil">Movil</ion-select-option>
-                <ion-select-option value="casa">Casa</ion-select-option>
-                <ion-select-option value="trabajo">Trabajo</ion-select-option>
-              </ion-select>
+          <form [formGroup]="dir_Form"  *ngFor="let control of dir_Form.controls | keyvalue">
+           <!-- <ion-item>
+              <ion-input type="text" placeholder="Calle"
+                         [formControlName]="" ></ion-input>
+              <ion-input placeholder="Ingresa la calle" formControlName="calle"></ion-input>
               <ion-button color="light" (click)="delete_Controldir(control)">
                 <ion-icon name="close-circle-outline" color="dark"></ion-icon>
               </ion-button>
-            </ion-item>
+            </ion-item>-->
+
+          <!--  <ion-item>
+              <ion-input type="text" placeholder="Ciudad"
+                         [formControlName]=""></ion-input>
+              <ion-select>
+                <ion-select-option value="movil">Casa</ion-select-option>
+                <ion-select-option value="casa">Trabajo</ion-select-option>
+                <ion-select-option value="trabajo">Otros</ion-select-option>
+              </ion-select>
+            </ion-item>-->
+
           </form>
         </ion-list>
       </ion-row>

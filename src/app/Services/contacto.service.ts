@@ -5,11 +5,22 @@ import  { Contacto, direccion} from "../Interfaces/contacto";
 @Injectable({
   providedIn: 'root'
 })
-export class ContactoService implements OnInit{
+export class ContactoService {
 
   all_Contacts: Contacto[] = [];
   all_Data: AngularFirestoreCollection<any[]>;
   constructor(private fs: AngularFirestore) {
+    this.all_Contacts = [];
+  }
+
+
+
+
+    public create_Contact(data: {Nombre: string, Apellidos: string, Correo: string, Apodo: string,
+    Circulo: string, Prefijo: string, SitioWeb: string}) {
+    return this.fs.collection('Contacto').add(data)
+  }
+  public get_Contacts() {
       this.all_Data = this.fs.collection<any>('Contacto');
       this.all_Data.snapshotChanges().subscribe(actions => actions.map(a =>{
           const data = a.payload.doc.data() as any;
@@ -35,21 +46,10 @@ export class ContactoService implements OnInit{
               };
           this.all_Contacts.push(contact);
           // this.friends_Contacts = this.contacts.filter(friends => friends.Circulo === 'Amigos');
-          console.log(this.all_Contacts);
-          console.log(id)
-
+          console.log(id);
       }));
-  }
-
-
-
-  ngOnInit() {}
-
-    public create_Contact(data: {Nombre: string, Apellidos: string, Correo: string, Apodo: string,
-    Circulo: string, Prefijo: string, SitioWeb: string}) {
-    return this.fs.collection('Contacto').add(data)
-  }
-  public get_Contacts() {
+      console.log(this.all_Contacts);
+        return this.all_Contacts;
   }
   public update_Contact() {}
   public delete_Contact() {}
