@@ -20,10 +20,10 @@ export class CreatePage  {
   private dir_Counter: number = 0;
   private photo: any;
   private tel_Form: FormGroup;
+  contact_Id = null;
 
 
-
-  constructor(private sanitizer: DomSanitizer,
+    constructor(private sanitizer: DomSanitizer,
               private  builder: FormBuilder,
               private fire_Service: ContactoService,
               private toastController: ToastController,

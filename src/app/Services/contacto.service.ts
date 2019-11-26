@@ -43,14 +43,17 @@ export class ContactoService {
                   Prefijo: String(data['Prefijo']),
                   SitioWeb: String(data['SitioWeb']),
                   Apodo: String(data['Apodo']),
+                  id: String(data['id']),
               };
           this.all_Contacts.push(contact);
           // this.friends_Contacts = this.contacts.filter(friends => friends.Circulo === 'Amigos');
-          console.log(id);
+          //console.log(id);
       }));
-      console.log(this.all_Contacts);
+      //console.log(this.all_Contacts);
         return this.all_Contacts;
   }
   public update_Contact() {}
   public delete_Contact() {}
+
+
 }

@@ -2,6 +2,7 @@ ion-header {
   --ion-background-color:#000000;
   --ion-text-color: var(--ion-color-light);
 
+
 }
 ion-header > ion-title {
 }
@@ -12,7 +13,13 @@ ion-searchbar {
   --icon-color: #ffffff;
   --placeholder-color: #ffffff;
   --placeholder-font-weight: 50px;
+  padding: 10px 15px 0px 15px;
+  border-radius: 50px;
+
+
 }
+
+
 ion-content {
   --ion-background-color: #000000;
   --ion-text-color: var(--ion-color-light);
@@ -27,4 +34,13 @@ ion-checkbox {
   --background-checked: #fff;
   --checkmark-color: var(--ion-color-primary);
   --border-style: none;
+}
+
+ion-list {
+  display: grid;
+  flex-flow: row;
+}
+
+ion-fab {
+display: block;
 }
