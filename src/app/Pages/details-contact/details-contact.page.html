@@ -1,0 +1,69 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="2">
+        <ion-button  routerLink="/" color="none" size="large">
+          <ion-icon name="arrow-round-back" color="primary"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ng-container *ngFor="let nam of name">
+        <ion-col *ngIf="nam.id === contact_Id" size="8" class="ion-align-self-center">
+          <ion-avatar >
+            <h1>{{ nam.Nombre.charAt(0) }} {{ nam.Apellidos.charAt(0) }}</h1>
+          </ion-avatar>
+        </ion-col>
+      </ng-container>
+
+
+      <ion-col size="2">
+        <ion-button color="none" size="large">
+          <ion-icon name="brush" color="primary"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-row>
+        <ng-container *ngFor="let nam of name">
+          <ion-item *ngIf="nam.id === contact_Id">
+            <h2>{{ nam.Nombre }} {{ nam.Apellidos }}</h2>
+          </ion-item>
+        </ng-container>
+      </ion-row>
+    </ion-row>
+
+      <ng-container *ngFor="let telefono of telefonos">
+        <ion-row *ngIf="telefono.id_Contacto == contact_Id">
+        <ion-col size="2">
+          <ion-icon name="call" color="primary"></ion-icon>
+        </ion-col>
+        <ion-col size="8">
+          <ion-button
+                  expand="full" color="none">
+            <ion-label>{{ telefono.Telefono }}</ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="mail" size="2" color="primary"></ion-icon>
+        </ion-col>
+        </ion-row>
+      </ng-container>
+
+    <ng-container *ngFor="let direccion of direcciones">
+      <ion-row *ngIf="direccion.id_Contacto === contact_Id">
+        <ion-col size="2" >
+          <ion-icon name="pin" color="primary"></ion-icon>
+        </ion-col>
+        <ion-col size="10">
+          <ion-button
+                  expand="full" color="none">
+            <h6>{{direccion.Calle}} {{direccion.Ciudad}} {{direccion.Estado}}</h6>
+            <h6> {{direccion.Numero}} {{direccion.CP}}</h6>
+          </ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ng-container>
+
+  </ion-grid>
+</ion-content>

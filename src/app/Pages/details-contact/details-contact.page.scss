@@ -1,0 +1,15 @@
+ion-header {
+  --ion-background-color:#000000;
+  --ion-text-color: var(--ion-color-light);
+}
+ion-content {
+  --ion-background-color: #000000;
+  --ion-text-color: var(--ion-color-light);
+}
+
+ion-grid > ion-row > ion-col > ion-avatar {
+  margin-left: calc(50% - 32px);
+  margin-top: 60px;
+  background: #7f7f7f;
+
+}

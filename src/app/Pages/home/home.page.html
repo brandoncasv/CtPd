@@ -1,6 +1,8 @@
+<script src="../../app-routing.module.ts"></script>
 <ion-header >
-  <ion-toolbar class="ion-padding">
-    <ion-searchbar animated="true" autocomplete="true"></ion-searchbar>
+  <ion-toolbar >
+    <ion-searchbar animated="true" autocomplete="true"
+    search-icon="menu" placeholder="Buscar contactos"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -13,17 +15,19 @@
     <ion-label >Social</ion-label>
     <ion-checkbox [(ngModel)]="social_Truee" ></ion-checkbox>
   </ion-item>
-  <ion-list *ngFor="let contact of contacts">
-    <ion-item  *ngIf="contact.Circulo === 'Social' && social_Truee === true">
-      <ion-avatar slot="start" >
-        <ion-img src="./assets/images/avatar.png"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>{{contact.Nombre}}</h2>
-        <h3>{{contact.Correo}}</h3>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+
+    <ng-container *ngFor="let contact of contacts">
+        <ion-item *ngIf="contact.Circulo === 'Otros' && social_Truee === true"
+                  lines="inset" button [routerLink]="['/details-contact', contact.id]">
+          <ion-avatar slot="start" >
+            <ion-img src="./assets/images/avatar.png"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
+          </ion-label>
+        </ion-item>
+    </ng-container>
+
 
       <ion-item>
         <ion-avatar>
@@ -32,17 +36,18 @@
         <ion-label >Amigos</ion-label>
         <ion-checkbox [(ngModel)]="amigos_Truee" ></ion-checkbox>
       </ion-item>
-    <ion-list *ngFor="let contact of contacts">
-      <ion-item  *ngIf="contact.Circulo === 'Amigos' && amigos_Truee === true">
-        <ion-avatar slot="start" >
-          <ion-img src="./assets/images/avatar.png"></ion-img>
-        </ion-avatar>
-        <ion-label>
-          <h2>{{contact.Nombre}}</h2>
-          <h3>{{contact.Correo}}</h3>
-        </ion-label>
-      </ion-item>
-    </ion-list>
+
+  <ng-container  *ngFor="let contact of contacts">
+    <ion-item  *ngIf="contact.Circulo === 'Amigos' && amigos_Truee === true"
+               lines="inset" button [routerLink]="['/details-contact', contact.id]">
+      <ion-avatar slot="start" >
+        <ion-img src="./assets/images/avatar.png"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
+      </ion-label>
+    </ion-item>
+  </ng-container>
 
       <ion-item>
         <ion-avatar>
@@ -51,30 +56,26 @@
         <ion-label >Trabajo</ion-label>
         <ion-checkbox [(ngModel)]="trabajo_Truee" ></ion-checkbox>
       </ion-item>
-      <ion-list *ngFor="let contact of contacts">
-        <ion-item  *ngIf="contact.Circulo === 'Trabajo' && trabajo_Truee === true">
-          <ion-avatar slot="start" >
-            <ion-img src="./assets/images/avatar.png"></ion-img>
-          </ion-avatar>
-          <ion-label>
-            <h2>{{contact.Nombre}}</h2>
-            <h3>{{contact.Correo}}</h3>
-          </ion-label>
-        </ion-item>
-      </ion-list>
+
+  <ng-container *ngFor="let contact of contacts">
+    <ion-item  *ngIf="contact.Circulo === 'Trabajo' && trabajo_Truee === true"
+               lines="inset" button [routerLink]="['/details-contact', contact.id]">
+      <ion-avatar slot="start" >
+        <ion-img src="./assets/images/avatar.png"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
+      </ion-label>
+    </ion-item>
+  </ng-container>
 
   </ion-list>
 
-
-
-  <ion-grid>
-    <ion-row justify-content-end >
-      <ion-col size="2">
-        <ion-fab-button color="light" (click)="create_Contact()">
-          <ion-icon name="add" ></ion-icon>
-        </ion-fab-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
+  <ion-fab  vertical="center" horizontal="center" slot="fixed" edge>
+    <ion-fab-button color="light" routerLink="/create">
+                    <!--href="/create"-->
+      <ion-icon name="add" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+<ion-footer></ion-footer>
 </ion-content>
