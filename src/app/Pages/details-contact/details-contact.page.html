@@ -1,12 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <!--<ion-title>detailsContact</ion-title>-->
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="2">
+        <ion-button  routerLink="/" color="none" size="large">
+          <ion-icon name="arrow-round-back"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="8" class="ion-align-self-center">
+        <ion-avatar>
+          <ion-img src="./assets/images/avatar.png"></ion-img>
+        </ion-avatar>
+      </ion-col>
+
+      <ion-col size="2">
+        <ion-button color="none" size="large">
+          <ion-icon name="brush"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+
+    </ion-row>
+    <ion-row>
+      <ion-button (click)="get_Tels()">Obtener</ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>

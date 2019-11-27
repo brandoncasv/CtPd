@@ -6,3 +6,9 @@ ion-content {
   --ion-background-color: #000000;
   --ion-text-color: var(--ion-color-light);
 }
+
+ion-grid > ion-row > ion-col > ion-avatar {
+  margin: 20% 0 10% 34%;
+  width: 30%;
+  height: 30%;
+}

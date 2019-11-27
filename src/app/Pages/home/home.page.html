@@ -1,3 +1,4 @@
+<script src="../../app-routing.module.ts"></script>
 <ion-header >
   <ion-toolbar >
     <ion-searchbar animated="true" autocomplete="true"
@@ -16,14 +17,13 @@
   </ion-item>
 
     <ng-container *ngFor="let contact of contacts">
-        <ion-item *ngIf="contact.Circulo === 'Social' && social_Truee === true"
+        <ion-item *ngIf="contact.Circulo === 'Otros' && social_Truee === true"
                   lines="inset" button [routerLink]="['/details-contact', contact.id]">
           <ion-avatar slot="start" >
             <ion-img src="./assets/images/avatar.png"></ion-img>
           </ion-avatar>
           <ion-label>
-            <h2>{{contact.Nombre}}</h2>
-            <h3>{{contact.Correo}}</h3>
+            <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
           </ion-label>
         </ion-item>
     </ng-container>
@@ -44,8 +44,7 @@
         <ion-img src="./assets/images/avatar.png"></ion-img>
       </ion-avatar>
       <ion-label>
-        <h2>{{contact.Nombre}}</h2>
-        <h3>{{contact.Correo}}</h3>
+        <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
       </ion-label>
     </ion-item>
   </ng-container>
@@ -65,8 +64,7 @@
         <ion-img src="./assets/images/avatar.png"></ion-img>
       </ion-avatar>
       <ion-label>
-        <h2>{{contact.Nombre}}</h2>
-        <h3>{{contact.Correo}}</h3>
+        <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
       </ion-label>
     </ion-item>
   </ng-container>

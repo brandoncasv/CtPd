@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Router} from "@angular/router";
 import  { Contacto } from "../../Interfaces/contacto";
-import { ContactoService } from '../../Services/contacto.service';
 import { CrudFirestoreService } from "../../Services/crud-firestore.service";
 
 @Component({
@@ -17,7 +16,6 @@ export class HomePage implements OnInit{
     social_Truee: boolean = false;
 
   constructor(private router: Router,
-              private  contac_service: ContactoService,
               private crudService: CrudFirestoreService,) {
       //uso del servicio contactoService
       /*this.contacts = [];
@@ -33,13 +31,6 @@ export class HomePage implements OnInit{
           console.log(res);
           this.contacts = res;
       });
-
   }
-  //funcion que envia a la page create
-  /*create_Contact() {
-    this.router.navigateByUrl('/create');
-  }*/
-
-
 }
 
