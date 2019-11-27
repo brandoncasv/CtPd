@@ -15,6 +15,8 @@ export interface Direccion {
     Ciudad: string;
     Estado: string;
     Numero: number;
+    id: string;
+    id_Contacto: string;
 }
 export interface Telefono {
     Telefono: number;

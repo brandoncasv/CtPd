@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from "@angular/fire/firestore";
+import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import {Contacto, Telefono} from "../Interfaces/contacto";
-import actions from "@angular/fire/schematics/deploy/actions";
+import { Telefono } from "../Interfaces/contacto";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,18 @@ export class TelefonoService {
 
   private telefono_Document: AngularFirestoreCollection<Telefono>;
   private telefono_Contacs: Observable<Telefono[]>;
-  constructor(private fs: AngularFirestore) {}
+  constructor(private fs: AngularFirestore) {
+    this.telefono_Document = fs.collection<Telefono>('Telefonos');
+    this.telefono_Contacs = this.telefono_Document.snapshotChanges().pipe(map(
+        actions => {
+          return actions.map(a =>{
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return {id, ...data};
+          });
+        }
+    ));
+  }
 
 
   /*get_Telefono(id: string) {
@@ -30,17 +41,6 @@ export class TelefonoService {
 
 
   get_Telefono(id: string) {
-    this.telefono_Document = this.fs.collection<Telefono>('Telefonos', ref =>
-      ref.where('id_Contact', '==', 'K0t6v5Ki1uez1jnw7QYP'));
-    this.telefono_Contacs = this.telefono_Document.snapshotChanges().pipe(map(
-       actions => {
-       return actions.map(a =>{
-         const data = a.payload.doc.data();
-         const id = a.payload.doc.id;
-         return {id, ...data};
-       });
-       }
-    ));
   }
 
   get_Telefonos() {
