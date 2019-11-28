@@ -13,17 +13,17 @@
       <ion-icon name="person"></ion-icon>
     </ion-avatar>
     <ion-label >Social</ion-label>
-    <ion-checkbox [(ngModel)]="social_Truee" ></ion-checkbox>
+    <ion-checkbox [(ngModel)]="social_Truee "></ion-checkbox>
   </ion-item>
 
-    <ng-container *ngFor="let contact of contacts">
-        <ion-item *ngIf="contact.Circulo === 'Otros' && social_Truee === true"
-                  lines="inset" button [routerLink]="['/details-contact', contact.id]">
+    <ng-container *ngFor="let otro of otros">
+        <ion-item *ngIf="social_Truee ===  true"
+                  lines="inset" button [routerLink]="['/details-contact', otro.id]">
           <ion-avatar slot="start" >
             <ion-img src="./assets/images/avatar.png"></ion-img>
           </ion-avatar>
           <ion-label>
-            <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
+            <h2>{{otro.Nombre}} {{otro.Apellidos}}</h2>
           </ion-label>
         </ion-item>
     </ng-container>
@@ -37,34 +37,34 @@
         <ion-checkbox [(ngModel)]="amigos_Truee" ></ion-checkbox>
       </ion-item>
 
-  <ng-container  *ngFor="let contact of contacts">
-    <ion-item  *ngIf="contact.Circulo === 'Amigos' && amigos_Truee === true"
-               lines="inset" button [routerLink]="['/details-contact', contact.id]">
+  <ng-container  *ngFor="let amigo of amigos">
+    <ion-item  *ngIf="amigos_Truee === true"
+               lines="inset" button [routerLink]="['/details-contact', amigo.id]">
       <ion-avatar slot="start" >
         <ion-img src="./assets/images/avatar.png"></ion-img>
       </ion-avatar>
       <ion-label>
-        <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
+        <h2>{{amigo.Nombre}} {{amigo.Apellidos}}</h2>
       </ion-label>
     </ion-item>
   </ng-container>
 
       <ion-item>
         <ion-avatar>
-          <ion-icon name="body"></ion-icon>
+          <ion-icon name="body">s</ion-icon>
         </ion-avatar>
         <ion-label >Trabajo</ion-label>
         <ion-checkbox [(ngModel)]="trabajo_Truee" ></ion-checkbox>
       </ion-item>
 
-  <ng-container *ngFor="let contact of contacts">
-    <ion-item  *ngIf="contact.Circulo === 'Trabajo' && trabajo_Truee === true"
-               lines="inset" button [routerLink]="['/details-contact', contact.id]">
+  <ng-container *ngFor="let trabajo of trabajos">
+    <ion-item  *ngIf="trabajo_Truee === true"
+               lines="inset" button [routerLink]="['/details-contact', trabajo.id]">
       <ion-avatar slot="start" >
         <ion-img src="./assets/images/avatar.png"></ion-img>
       </ion-avatar>
       <ion-label>
-        <h2>{{contact.Nombre}} {{contact.Apellidos}}</h2>
+        <h2>{{trabajo.Nombre}} {{trabajo.Apellidos}}</h2>
       </ion-label>
     </ion-item>
   </ng-container>

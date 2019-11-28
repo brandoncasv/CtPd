@@ -5,7 +5,7 @@ import {FormControl, FormGroup, FormBuilder, Validators, FormGroupName} from "@a
 import { ToastController } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
-import { CrudFirestoreService } from "../../Services/crud-firestore.service";
+import { ContactService } from "../../Services/contact.service";
 
 @Component({
   selector: 'app-create',
@@ -26,7 +26,7 @@ export class CreatePage implements OnInit {
 
     constructor(private sanitizer: DomSanitizer,
               private  builder: FormBuilder,
-              private crudService: CrudFirestoreService,
+              private crudService: ContactService,
               private toastController: ToastController,
               private router: Router,
               private loadingController: LoadingController,

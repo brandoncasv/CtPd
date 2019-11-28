@@ -1,8 +1,7 @@
-<script src="../../Interfaces/contacto.ts"></script>
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button default-href="/" color="primary"></ion-back-button>
+      <ion-back-button default-href="home" color="primary"></ion-back-button>
     </ion-buttons>
     <ion-button color="none">
       <ion-icon name="brush" color="primary"></ion-icon>
@@ -11,24 +10,26 @@
 </ion-header>
 <ion-content >
 
-  <ion-grid>
-   <!-- <ion-row class="ion-justify-content-center">
-      <ng-container *ngFor="let nam of name">
-        <ion-col *ngIf="nam.id === contact_Id" size="8" class="ion-align-self-center">
+  <ion-grid >
+    <ion-row class="ion-justify-content-center" >
+      <ng-container>
+        <ion-col size="8" >
           <ion-avatar >
-            <h1>{{ nam.Nombre.charAt(0).toLocaleUpperCase() }}
-              {{ nam.Apellidos.charAt(0).toLocaleUpperCase() }}</h1>
+            <h1>{{ (contact | async)?.Nombre.charAt(0).toLocaleUpperCase() }}
+              {{ (contact | async)?.Apellidos.charAt(0).toLocaleUpperCase() }}
+            </h1>
           </ion-avatar>
         </ion-col>
-      </ng-container>-->
 
-      <ion-row>
-        <ng-container *ngFor="let nam of name">
-          <ion-item *ngIf="nam.id === contact_Id">
-            <h2>{{ nam.Nombre }} {{ nam.Apellidos }}</h2>
+        <ion-row>
+          <ion-item >
+            <h2>{{ (contact | async)?.Nombre }} {{ (contact | async)?.Apellidos }}</h2>
           </ion-item>
-        </ng-container>
-      </ion-row>
+        </ion-row>
+      </ng-container>
+    </ion-row>
+
+
 
     <ng-container *ngFor="let telefono of telefonos">
       <ion-button expand="block" color="dark" *ngIf="telefono.id_Contacto == contact_Id">
@@ -68,15 +69,5 @@
       </ion-button>
     </ng-container>
 
-    <ion-row class="ion-justify-content-center">
-      <ng-container >
-        <ion-col  class="ion-align-self-center">
-          <ion-avatar >
-            <h1>{{ contact.Nombre }}
-              </h1>
-          </ion-avatar>
-        </ion-col>
-      </ng-container>
-  </ion-row>
   </ion-grid>
 </ion-content>
