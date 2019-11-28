@@ -30,6 +30,8 @@ export class ContactService {
   get_Contact(id: string) {
     return this.contacts_Collection.doc<Contacto>(id).valueChanges();
   }
+
+
   update_Contact(contact: Contacto, id: string) {
     return this.contacts_Collection.doc(id).update(contact);
   }

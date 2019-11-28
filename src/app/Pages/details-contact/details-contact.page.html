@@ -1,27 +1,26 @@
-<ion-content>
+<script src="../../Interfaces/contacto.ts"></script>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-button color="none">
+      <ion-icon name="brush" color="primary"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
 
   <ion-grid>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size="2">
-        <ion-button  routerLink="/" color="none" size="large">
-          <ion-icon name="arrow-round-back" color="primary"></ion-icon>
-        </ion-button>
-      </ion-col>
-
+   <!-- <ion-row class="ion-justify-content-center">
       <ng-container *ngFor="let nam of name">
         <ion-col *ngIf="nam.id === contact_Id" size="8" class="ion-align-self-center">
           <ion-avatar >
-            <h1>{{ nam.Nombre.charAt(0) }} {{ nam.Apellidos.charAt(0) }}</h1>
+            <h1>{{ nam.Nombre.charAt(0).toLocaleUpperCase() }}
+              {{ nam.Apellidos.charAt(0).toLocaleUpperCase() }}</h1>
           </ion-avatar>
         </ion-col>
-      </ng-container>
-
-
-      <ion-col size="2">
-        <ion-button color="none" size="large">
-          <ion-icon name="brush" color="primary"></ion-icon>
-        </ion-button>
-      </ion-col>
+      </ng-container>-->
 
       <ion-row>
         <ng-container *ngFor="let nam of name">
@@ -30,40 +29,54 @@
           </ion-item>
         </ng-container>
       </ion-row>
-    </ion-row>
 
-      <ng-container *ngFor="let telefono of telefonos">
-        <ion-row *ngIf="telefono.id_Contacto == contact_Id">
-        <ion-col size="2">
-          <ion-icon name="call" color="primary"></ion-icon>
-        </ion-col>
-        <ion-col size="8">
-          <ion-button
-                  expand="full" color="none">
-            <ion-label>{{ telefono.Telefono }}</ion-label>
-          </ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-icon name="mail" size="2" color="primary"></ion-icon>
-        </ion-col>
-        </ion-row>
-      </ng-container>
-
-    <ng-container *ngFor="let direccion of direcciones">
-      <ion-row *ngIf="direccion.id_Contacto === contact_Id">
-        <ion-col size="2" >
-          <ion-icon name="pin" color="primary"></ion-icon>
-        </ion-col>
-        <ion-col size="10">
-          <ion-button
-                  expand="full" color="none">
-            <h6>{{direccion.Calle}} {{direccion.Ciudad}} {{direccion.Estado}}</h6>
-            <h6> {{direccion.Numero}} {{direccion.CP}}</h6>
-          </ion-button>
-        </ion-col>
-
-      </ion-row>
+    <ng-container *ngFor="let telefono of telefonos">
+      <ion-button expand="block" color="dark" *ngIf="telefono.id_Contacto == contact_Id">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1">
+              <ion-icon name="call"></ion-icon>
+            </ion-col>
+            <ion-col size="10" >
+              <h6 class="firs-label">
+                {{ telefono.Telefono.toString().substring(0, 3)}}
+                {{ telefono.Telefono.toString().substring(3, 6)}}
+                {{ telefono.Telefono.toString().substring(6, 10)}}</h6>
+              <h6 class="second-label">{{telefono.tipo_Telefono}}</h6>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="mail"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
     </ng-container>
 
+    <ng-container *ngFor="let direccion of direcciones">
+      <ion-button expand="block" color="dark" *ngIf="direccion.id_Contacto == contact_Id">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1">
+              <ion-icon name="pin"></ion-icon>
+            </ion-col>
+            <ion-col size="10" >
+              <h6 class="firs-label">{{ direccion.Calle }} {{direccion.Estado}}</h6>
+              <h6 class="second-label">{{direccion.Numero}} {{direccion.CP}}</h6>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </ng-container>
+
+    <ion-row class="ion-justify-content-center">
+      <ng-container >
+        <ion-col  class="ion-align-self-center">
+          <ion-avatar >
+            <h1>{{ contact.Nombre }}
+              </h1>
+          </ion-avatar>
+        </ion-col>
+      </ng-container>
+  </ion-row>
   </ion-grid>
 </ion-content>

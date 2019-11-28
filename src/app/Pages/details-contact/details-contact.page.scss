@@ -2,14 +2,81 @@ ion-header {
   --ion-background-color:#000000;
   --ion-text-color: var(--ion-color-light);
 }
+ion-header > ion-toolbar > ion-button {
+  margin-left: calc(100% - 50.375px);
+  fill: #1B2749;
+  :host{
+    outline-color: var(--ion-color-primary);
+  }
+}
+
+
+
 ion-content {
   --ion-background-color: #000000;
   --ion-text-color: var(--ion-color-light);
 }
 
 ion-grid > ion-row > ion-col > ion-avatar {
+  background: #00557f;
   margin-left: calc(50% - 32px);
-  margin-top: 60px;
-  background: #7f7f7f;
+}
+ion-grid > ion-row > ion-col > ion-avatar > h1 {
+  padding-top: calc(50% - 15.5px);
+  padding-right: calc(50% - 32px);
+  text-align: center;
+}
 
+
+
+
+ion-button {
+  margin: 0 0 0 0;
+  white-space: normal;
+  border-radius: 30px;
+}
+ion-button > ion-grid {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 0;
+  margin: 0 -15px;
+}
+ion-button > ion-grid > ion-row  {
+  width: 100%;
+  height: 100%;
+  :host {
+    --padding-top: var(--ion-grid-column-padding-xs,var(--ion-grid-column-padding));
+    --padding-bottom: var(--ion-grid-column-padding-xs,var(--ion-grid-column-padding));
+  }
+
+}
+ion-button > ion-grid > ion-row > ion-col{
+  width: 100%;
+  height: 100%;
+  padding: 5px 5px 5px 5px;
+}
+ion-button > ion-grid > ion-row > ion-col > ion-icon {
+  color: var(--ion-color-primary);
+}
+
+.firs-label {
+  font-size: 14px;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 67%;
+  text-align: start;
+  padding-left: 5px;
+}
+.second-label {
+  font-size: 10px;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 33%;
+  text-align: start;
+  padding-left: 5px;
+}
+
+ion-button > ion-grid > ion-row > ion-col > ion-icon {
+  width: 90%;
+  height: 90%;
 }
