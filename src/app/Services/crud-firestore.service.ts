@@ -19,7 +19,7 @@ export class CrudFirestoreService {
   constructor(private fs: AngularFirestore) {
 
     this.trabajo_Collection = fs.collection<Contacto>('Contacto',
-            ref => ref.where('Circulo', '==', 'Trabajo') );
+            ref => ref.where('Circulo', '==', 'Trabajo'));
     this.trabajo_Contacs = this.trabajo_Collection.snapshotChanges().pipe(map(
         actions => {
           return actions.map(a => {
