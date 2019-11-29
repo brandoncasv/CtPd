@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/fire
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Contacto } from "../Interfaces/contacto";
+import {forEach} from "@angular-devkit/schematics";
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,13 @@ export class CrudFirestoreService {
 
   private contacts_Collection: AngularFirestoreCollection<Contacto>;
   private all_Contacs: Observable<Contacto[]>;
+  private circulos: any = ["Otros", "Amigos", "Trabajo" ];
   constructor(private fs: AngularFirestore) {
-    this.contacts_Collection = fs.collection<Contacto>('Contacto');
+
+  
+
+    this.contacts_Collection = fs.collection<Contacto>('Contacto', ref =>
+        ref.where('Circulo','==','Otros'));
     this.all_Contacs = this.contacts_Collection.snapshotChanges().pipe(map(
         actions => {
           return actions.map(a => {
