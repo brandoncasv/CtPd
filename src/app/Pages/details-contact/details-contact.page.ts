@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { TelefonoService } from "../../Services/telefono.service";
-import {Contacto, Direccion, Telefono, Contact} from "../../Interfaces/contacto";
+import {Contacto, Direccion, Telefono, Contact, address, cell} from "../../Interfaces/contacto";
 import { ContactService } from "../../Services/contact.service";
 import { AngularFirestoreDocument } from "@angular/fire/firestore";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {DireccionService} from "../../Services/direccion.service";
+import {async} from "@angular/core/testing";
 
 @Component({
   selector: 'app-details-contact',
@@ -15,9 +16,8 @@ import {DireccionService} from "../../Services/direccion.service";
 })
 export class DetailsContactPage implements OnInit {
 
-  telefonos: Telefono[];
-  name: Contacto[];
-  direcciones: Direccion[];
+  cell: Observable<cell>;
+  address: Observable<address>;
   contact: Observable<Contact>;
   contact_Id: string = '';
   constructor(private  route: ActivatedRoute,
@@ -28,12 +28,9 @@ export class DetailsContactPage implements OnInit {
 
   ngOnInit() {
     this.contact_Id = this.route.snapshot.params['id'];
-    //this._contact.get_Contacts().subscribe(res => this.name = res);
-    this._contact.get_Contacts().subscribe(res => this.name = res);
-    this._telefono.get_Telefonos().subscribe(res => this.telefonos = res);
-    this._direccion.get_Direcciones().subscribe(res=>this.direcciones=res);
-
     this.contact = this._contact.get_Contact(this.contact_Id).valueChanges();
+    this.address = this._direccion.get_Direccion(this.contact_Id).valueChanges();
+    this.cell = this._telefono.get_Telefono(this.contact_Id).valueChanges();
 
   }
 

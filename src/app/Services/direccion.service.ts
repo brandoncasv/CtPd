@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/firestore";
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { Direccion } from "../Interfaces/contacto";
+import {address, Direccion} from "../Interfaces/contacto";
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,8 @@ export class DireccionService {
 
   get_Direcciones() {
     return this.direccion_Contacs;
+  }
+  get_Direccion(id: string): AngularFirestoreDocument<address> {
+    return this.fs.collection('Direccion').doc(id);
   }
 }

@@ -12,62 +12,56 @@
 
   <ion-grid >
     <ion-row class="ion-justify-content-center" >
-      <ng-container>
-        <ion-col size="8" >
-          <ion-avatar >
-            <h1>{{ (contact | async)?.Nombre.charAt(0).toLocaleUpperCase() }}
-              {{ (contact | async)?.Apellidos.charAt(0).toLocaleUpperCase() }}
-            </h1>
-          </ion-avatar>
-        </ion-col>
+      <ion-col size="8" >
+        <ion-avatar >
+          <h1>{{ (contact | async)?.Nombre.charAt(0).toLocaleUpperCase() }}
+            {{ (contact | async)?.Apellidos.charAt(0).toLocaleUpperCase() }}
+          </h1>
+        </ion-avatar>
+      </ion-col>
 
-        <ion-row>
-          <ion-item >
-            <h2>{{ (contact | async)?.Nombre }} {{ (contact | async)?.Apellidos }}</h2>
-          </ion-item>
-        </ion-row>
-      </ng-container>
+      <ion-row>
+        <ion-item >
+          <h2>{{ (contact | async)?.Nombre }} {{ (contact | async)?.Apellidos }}</h2>
+        </ion-item>
+      </ion-row>
     </ion-row>
 
+    <ion-button expand="block" color="dark">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon name="call"></ion-icon>
+          </ion-col>
+          <ion-col size="10" >
+            <h6 class="firs-label">
+              {{ (cell | async)?.Telefono }}
+              {{ (cell | async)?.Telefono.toString().substring(3, 6)}}
+              {{ (cell | async)?.Telefono.toString().substring(6, 10)}}</h6>
+            <h6 class="second-label">{{(cell | async)?.tipo_Telefono}}</h6>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon name="mail"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-button>
 
 
-    <ng-container *ngFor="let telefono of telefonos">
-      <ion-button expand="block" color="dark" *ngIf="telefono.id_Contacto == contact_Id">
-        <ion-grid>
-          <ion-row>
-            <ion-col size="1">
-              <ion-icon name="call"></ion-icon>
-            </ion-col>
-            <ion-col size="10" >
-              <h6 class="firs-label">
-                {{ telefono.Telefono.toString().substring(0, 3)}}
-                {{ telefono.Telefono.toString().substring(3, 6)}}
-                {{ telefono.Telefono.toString().substring(6, 10)}}</h6>
-              <h6 class="second-label">{{telefono.tipo_Telefono}}</h6>
-            </ion-col>
-            <ion-col size="1">
-              <ion-icon name="mail"></ion-icon>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ng-container>
+    <ion-button expand="block" color="dark">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon name="pin"></ion-icon>
+          </ion-col>
+          <ion-col size="10" >
+            <h6 class="firs-label">{{ ( address | async)?.Calle }} {{ (address| async )?.Estado}}</h6>
+            <h6 class="second-label">{{ ( address | async)?.Numero }} {{ ( address | async)?.CP}}</h6>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-button>
 
-    <ng-container *ngFor="let direccion of direcciones">
-      <ion-button expand="block" color="dark" *ngIf="direccion.id_Contacto == contact_Id">
-        <ion-grid>
-          <ion-row>
-            <ion-col size="1">
-              <ion-icon name="pin"></ion-icon>
-            </ion-col>
-            <ion-col size="10" >
-              <h6 class="firs-label">{{ direccion.Calle }} {{direccion.Estado}}</h6>
-              <h6 class="second-label">{{direccion.Numero}} {{direccion.CP}}</h6>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-button>
-    </ng-container>
 
   </ion-grid>
 </ion-content>

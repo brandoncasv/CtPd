@@ -3,7 +3,6 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 import {Contact, Contacto} from "../Interfaces/contacto";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
-import actions from "@angular/fire/schematics/deploy/actions";
 
 @Injectable({
   providedIn: 'root'
