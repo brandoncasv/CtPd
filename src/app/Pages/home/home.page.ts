@@ -10,26 +10,35 @@ import { CrudFirestoreService } from "../../Services/crud-firestore.service";
 })
 export class HomePage implements OnInit{
 
-    contacts: Contacto[];
     amigos_Truee: boolean = false;
     trabajo_Truee: boolean = false;
     social_Truee: boolean = false;
 
-  constructor(private router: Router,
+    otros: Contacto[];
+    trabajos: Contacto[];
+    amigos: Contacto[];
+
+    constructor(private router: Router,
               private crudService: CrudFirestoreService,) {
-      //uso del servicio contactoService
-      /*this.contacts = [];
-      this.contacts = this.contac_service.get_Contacts();*/
-      //uso del servicio crudFirestore
 
 
   }
 
   ngOnInit() {
-      this.crudService.get_Contacts().subscribe(res => {
-          console.log(`Colección de contactos ${res}`);
+      this.crudService.get_Contacts_Amigos().subscribe(res => {
           console.log(res);
-          this.contacts = res;
+          this.amigos = res;
+      });
+
+      this.crudService.get_Contacts_Otros().subscribe(res => {
+          console.log(res);
+
+          this.otros = res;
+      });
+
+      this.crudService.get_Contacts_Trabajo().subscribe(res => {
+          console.log(res);
+          this.trabajos = res;
       });
   }
 }

@@ -10,16 +10,17 @@ import {forEach} from "@angular-devkit/schematics";
 })
 export class CrudFirestoreService {
 
-  private contacts_Collection: AngularFirestoreCollection<Contacto>;
-  private all_Contacs: Observable<Contacto[]>;
-  private circulos: any = ["Otros", "Amigos", "Trabajo" ];
+  private trabajo_Collection: AngularFirestoreCollection<Contacto>;
+  private trabajo_Contacs: Observable<Contacto[]>;
+  private amigos_Collection: AngularFirestoreCollection<Contacto>;
+  private amigos_Contacs: Observable<Contacto[]>;
+  private otros_Collection: AngularFirestoreCollection<Contacto>;
+  private otros_Contacs: Observable<Contacto[]>;
   constructor(private fs: AngularFirestore) {
 
-  
-
-    this.contacts_Collection = fs.collection<Contacto>('Contacto', ref =>
-        ref.where('Circulo','==','Otros'));
-    this.all_Contacs = this.contacts_Collection.snapshotChanges().pipe(map(
+    this.trabajo_Collection = fs.collection<Contacto>('Contacto',
+            ref => ref.where('Circulo', '==', 'Trabajo') );
+    this.trabajo_Contacs = this.trabajo_Collection.snapshotChanges().pipe(map(
         actions => {
           return actions.map(a => {
             const data = a.payload.doc.data();
@@ -28,21 +29,42 @@ export class CrudFirestoreService {
           });
         }
     ));
+
+    this.amigos_Collection = fs.collection<Contacto>('Contacto',
+        ref => ref.where('Circulo', '==', 'Amigos') );
+    this.amigos_Contacs = this.amigos_Collection.snapshotChanges().pipe(map(
+        actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return {id, ...data};
+          });
+        }
+    ));
+
+    this.otros_Collection = fs.collection<Contacto>('Contacto',
+        ref => ref.where('Circulo', '==', 'Otros') );
+    this.otros_Contacs = this.otros_Collection.snapshotChanges().pipe(map(
+        actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return {id, ...data};
+          });
+        }
+    ));
+
+
   }
 
-  get_Contacts() {
-    return this.all_Contacs;
+  get_Contacts_Otros() {
+    return this.otros_Contacs;
   }
-  get_Contact(id: string) {
-    return this.contacts_Collection.doc<Contacto>(id).valueChanges();
+  get_Contacts_Amigos() {
+    return this.amigos_Contacs;
   }
-  update_Contact(contact: Contacto, id: string) {
-    return this.contacts_Collection.doc(id).update(contact);
+  get_Contacts_Trabajo() {
+    return this.trabajo_Contacs
   }
-  add_Contact(contac: Contacto) {
-    return this.contacts_Collection.add(contac);
-  }
-  delete_Contact(id: string) {
-    return this.contacts_Collection.doc(id).delete();
-  }
+
 }

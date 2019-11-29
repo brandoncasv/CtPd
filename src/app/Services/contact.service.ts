@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/firestore";
-import {Contacto} from "../Interfaces/contacto";
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "@angular/fire/firestore";
+import {Contact, Contacto} from "../Interfaces/contacto";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 
@@ -27,11 +27,9 @@ export class ContactService {
   get_Contacts() {
     return this.all_Contacs;
   }
-  get_Contact(id: string) {
-    return this.contacts_Collection.doc<Contacto>(id).valueChanges();
+  get_Contact(id: string): AngularFirestoreDocument<Contact> {
+   return this.fs.collection('Contacto').doc(id);
   }
-
-
   update_Contact(contact: Contacto, id: string) {
     return this.contacts_Collection.doc(id).update(contact);
   }
