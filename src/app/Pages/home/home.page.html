@@ -2,13 +2,31 @@
 <ion-header >
   <ion-toolbar >
     <ion-searchbar animated="true" autocomplete="true"
-    search-icon="menu" placeholder="Buscar contactos"></ion-searchbar>
+    search-icon="menu" placeholder="Buscar contactos"
+    (ionChange)="buscarUsuario($event)"
+    (ionFocus)="focus()" (ionCancel)="cancel()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-<ion-list>
-  <ion-item>
+
+  <ion-list *ngIf="change_State">
+    <ng-container *ngFor="let busqueda of busqueda | searchName:texto_busqueda">
+      <ion-item lines="inset" button [routerLink]="['/details-contact', busqueda.id]">
+        <ion-avatar slot="start" >
+          <ion-img src="./assets/images/avatar.png"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{busqueda.Nombre}} {{busqueda.Apellidos}}</h2>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+
+  <ion-list *ngIf="!change_State">
+
+  <ion-item >
     <ion-avatar>
       <ion-icon name="person"></ion-icon>
     </ion-avatar>
@@ -77,5 +95,4 @@
       <ion-icon name="add" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
-<ion-footer></ion-footer>
 </ion-content>

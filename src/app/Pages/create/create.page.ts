@@ -6,6 +6,8 @@ import { ToastController } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
 import { ContactService } from "../../Services/contact.service";
+import {DocumentReference} from "@angular/fire/firestore";
+import {Contacto} from "../../Interfaces/contacto";
 
 @Component({
   selector: 'app-create',
@@ -15,14 +17,14 @@ import { ContactService } from "../../Services/contact.service";
 export class CreatePage implements OnInit {
 
   private create_Form: FormGroup;
+  private tel_Form: FormGroup;
+
   private tel_Counter: number = 0;
   private tipotel_Counter: number = 0;
   private dir_Form: FormGroup;
   private dir_Counter: number = 0;
   private photo: any = '';
-  private tel_Form: FormGroup;
-  contact_Id = null;
-
+  public contact_ID:any;
 
     constructor(private sanitizer: DomSanitizer,
               private  builder: FormBuilder,
@@ -50,6 +52,8 @@ export class CreatePage implements OnInit {
 
 
  ngOnInit() {
+
+
      this.create_Form = this.builder.group({
          Nombre: ['', Validators.required],
          Apellidos: [''],
@@ -85,18 +89,24 @@ export class CreatePage implements OnInit {
         toast.present();
     }
 
+
     async save_Contact(createForm, telForm,) {
      const loading = await this.loadingController.create({
          message: 'Subiendo a la nube'
      });
      await loading.present();
-     this.crudService.add_Contact(createForm).then(() => {
-       loading.dismiss();
-       this.nav.navigateForward('/');
-     });
+        this.contact_ID = this.crudService.add_Contact(createForm).then(() =>{
+            loading.dismiss();
+            this.nav.navigateForward('/');
+            });
+
  }
+
+
+
     add_Controltel() {
         this.tel_Counter++;
+        this.tipotel_Counter++;
         this.tel_Form.addControl('telefono' + this.tel_Counter, new FormControl(
             '', Validators.minLength(10)));
         this.tel_Form.addControl('tipo_Telefono' + this.tipotel_Counter, new FormControl(
@@ -108,4 +118,9 @@ export class CreatePage implements OnInit {
         this.tel_Form.removeControl(control.key)
     }
 
+
+
+
 }
+
+

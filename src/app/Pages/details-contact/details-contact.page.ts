@@ -28,6 +28,7 @@ export class DetailsContactPage implements OnInit {
   ngOnInit() {
     this.contact_Id = this.route.snapshot.params['id'];
     this.contact = this._contact.get_Contact(this.contact_Id).valueChanges();
+
     this._direccion.get_Direccion(this.contact_Id).subscribe(res=>{
       this.address =res;
     });
