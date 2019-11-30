@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "@angular/fire/firestore";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument,
+  DocumentReference
+} from "@angular/fire/firestore";
 import {Contact, Contacto} from "../Interfaces/contacto";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
@@ -11,6 +16,7 @@ export class ContactService {
 
   private contacts_Collection: AngularFirestoreCollection<Contacto>;
   private all_Contacs: Observable<Contacto[]>;
+   id_Contact: string = '';
   constructor(private fs: AngularFirestore) {
     this.contacts_Collection = fs.collection<Contacto>('Contacto');
     this.all_Contacs = this.contacts_Collection.snapshotChanges().pipe(map(
@@ -33,10 +39,32 @@ export class ContactService {
   update_Contact(contact: Contacto, id: string) {
     return this.contacts_Collection.doc(id).update(contact);
   }
+
   add_Contact(contac: Contacto) {
-    return this.contacts_Collection.add(contac);
+     return this.contacts_Collection.add(contac);
   }
+
   delete_Contact(id: string) {
     return this.contacts_Collection.doc(id).delete();
   }
 }
+/*
+.then(
+    function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    }).catch(function (error)  {
+  console.error('Error agregando un documento: ', error);
+})
+
+
+
+.then(
+         function get_Id (docRef) {
+           let id = docRef.id;
+           console.log(docRef.id);
+           return id
+         }
+     ).catch(function (error) {
+       console.error('Error al agregar el documento', error);
+     })
+*/
