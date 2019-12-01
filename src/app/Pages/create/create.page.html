@@ -104,12 +104,12 @@
     </ion-row>
     <ion-row>
 
-      <ion-list lines="none" *ngIf="tel_Counter > 0" class="ion-padding">
+      <ion-list lines="none" *ngIf="show" class="ion-padding">
         <form [formGroup]="tel_Form">
           <ion-col>
             <ion-item>
               <ion-input type="number" placeholder="Ingresa el número telefónico"
-                         formControlName="telefono" ></ion-input>
+                         formControlName="Telefono"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -125,7 +125,7 @@
           </ion-col
           >
           <ion-col>
-            <ion-item>
+            <ion-item >
               <ion-button color="light" (click)="delete_Controltel(control)">
                 <ion-icon name="close-circle-outline" color="dark"></ion-icon>
               </ion-button>

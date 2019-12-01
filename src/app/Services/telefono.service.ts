@@ -43,8 +43,11 @@ export class TelefonoService {
           })
         }
     ));
+
   }
 
-
+    add_Telefono(telefono: Telefono) {
+        return this.telefono_Collection.add(telefono);
+    }
 
 }

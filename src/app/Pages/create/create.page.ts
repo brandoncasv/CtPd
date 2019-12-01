@@ -6,8 +6,11 @@ import { ToastController } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
 import { ContactService } from "../../Services/contact.service";
-import {DocumentReference} from "@angular/fire/firestore";
-import {Contacto} from "../../Interfaces/contacto";
+import {AngularFirestoreDocument, DocumentReference} from "@angular/fire/firestore";
+import {cell, Contacto, Direccion} from "../../Interfaces/contacto";
+import {Observable} from "rxjs";
+import {TelefonoService} from "../../Services/telefono.service";
+import {forEach} from "@angular-devkit/schematics";
 
 @Component({
   selector: 'app-create',
@@ -18,13 +21,13 @@ export class CreatePage implements OnInit {
 
   private create_Form: FormGroup;
   private tel_Form: FormGroup;
-
-  private tel_Counter: number = 0;
-  private tipotel_Counter: number = 0;
+  private show: boolean = false;
+ /* private tel_Counter: number = 0;
+  private tipotel_Counter: number = 0;*/
   private dir_Form: FormGroup;
   private dir_Counter: number = 0;
   private photo: any = '';
-  public contact_ID:any;
+  public contact_ID: string;
 
     constructor(private sanitizer: DomSanitizer,
               private  builder: FormBuilder,
@@ -32,7 +35,8 @@ export class CreatePage implements OnInit {
               private toastController: ToastController,
               private router: Router,
               private loadingController: LoadingController,
-              private nav: NavController, ) {}
+              private nav: NavController,
+              private _telService: TelefonoService ) {}
 
 
     /*
@@ -52,7 +56,6 @@ export class CreatePage implements OnInit {
 
 
  ngOnInit() {
-
 
      this.create_Form = this.builder.group({
          Nombre: ['', Validators.required],
@@ -95,26 +98,38 @@ export class CreatePage implements OnInit {
          message: 'Subiendo a la nube'
      });
      await loading.present();
-        this.contact_ID = this.crudService.add_Contact(createForm).then(() =>{
+        this.contact_ID = await this.crudService.add_Contact(createForm).then((result) => {
+            this.nav.navigateForward('/');
+            return result.id;
+            });
+        console.log(this.contact_ID);
+        let data: cell[]=[];
+        for (i=0; telForm.length; i++)
+        {
+               data.push(telForm[i].value)
+        }
+        let id= `id_Contacto:${this.contact_ID}`;
+        data.push(id);
+
+        console.log(telForm);
+        await this._telService.add_Telefono(telForm).then(() => {
             loading.dismiss();
             this.nav.navigateForward('/');
-            });
-
+        });
  }
 
 
 
     add_Controltel() {
-        this.tel_Counter++;
-        this.tipotel_Counter++;
-        this.tel_Form.addControl('telefono' + this.tel_Counter, new FormControl(
+        this.show = true;
+        this.tel_Form.addControl('Telefono', new FormControl(
             '', Validators.minLength(10)));
-        this.tel_Form.addControl('tipo_Telefono' + this.tipotel_Counter, new FormControl(
+        this.tel_Form.addControl('tipo_Telefono', new FormControl(
             '', Validators.maxLength(10)));
         console.log(this.tel_Form.value)
     }
+
     delete_Controltel(control) {
-        this.tel_Counter--;
         this.tel_Form.removeControl(control.key)
     }
 
