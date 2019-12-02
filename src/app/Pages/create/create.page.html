@@ -103,38 +103,40 @@
       </ion-col>
     </ion-row>
     <ion-row>
-
       <ion-list lines="none" *ngIf="show" class="ion-padding">
         <form [formGroup]="tel_Form">
-          <ion-col>
-            <ion-item>
-              <ion-input type="number" placeholder="Ingresa el número telefónico"
-                         formControlName="Telefono"></ion-input>
-            </ion-item>
-          </ion-col>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input type="number" placeholder="Ingresa el número telefónico"
+                           formControlName="Telefono"></ion-input>
+              </ion-item>
+            </ion-col>
 
-          <ion-col>
-            <ion-item>
-              <ion-label>Tipo</ion-label>
-              <ion-select formControlName="tipo_Telefono">
-                <ion-select-option value="movil">Movil</ion-select-option>
-                <ion-select-option value="casa">Casa</ion-select-option>
-                <ion-select-option value="trabajo">Trabajo</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-col
-          >
-          <ion-col>
-            <ion-item >
-              <ion-button color="light" (click)="delete_Controltel(control)">
-                <ion-icon name="close-circle-outline" color="dark"></ion-icon>
-              </ion-button>
-            </ion-item>
-          </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label>Tipo</ion-label>
+                <ion-select formControlName="tipo_Telefono">
+                  <ion-select-option value="movil">Movil</ion-select-option>
+                  <ion-select-option value="casa">Casa</ion-select-option>
+                  <ion-select-option value="trabajo">Trabajo</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-button color="light" (click)="delete_Controltel()">
+                  <ion-icon name="close-circle-outline" color="dark"></ion-icon>
+                </ion-button>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="show_formcm">
+            <ion-item formControlName="id_Contacto"></ion-item>
+          </ion-row>
         </form>
       </ion-list>
     </ion-row>
-
 
 
 

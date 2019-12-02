@@ -28,6 +28,9 @@ export class CreatePage implements OnInit {
   private dir_Counter: number = 0;
   private photo: any = '';
   public contact_ID: string;
+  private show_formcm: boolean = false;
+  private default_Text: string = '';
+  private default_Number:Number = null;
 
     constructor(private sanitizer: DomSanitizer,
               private  builder: FormBuilder,
@@ -99,23 +102,30 @@ export class CreatePage implements OnInit {
      });
      await loading.present();
         this.contact_ID = await this.crudService.add_Contact(createForm).then((result) => {
-            this.nav.navigateForward('/');
             return result.id;
-            });
+        });
         console.log(this.contact_ID);
-        let data: cell[]=[];
+        console.log(this.tel_Form, telForm);
+        /*let data: cell[]=[];
         for (i=0; telForm.length; i++)
         {
                data.push(telForm[i].value)
         }
         let id= `id_Contacto:${this.contact_ID}`;
-        data.push(id);
+        data.push(id);*/
+        if (this.show) {
+            this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
+            await this._telService.add_Telefono(this.tel_Form.value).then(() => {
+                loading.dismiss();
+                this.nav.navigateForward('/');
+            });
+        } else {
+            this.tel_Form.addControl('id_Contacto', new FormControl(this.default_Text));
+            this.tel_Form.addControl('Telefono', new FormControl(this.default_Text));
+            this.tel_Form.addControl('tipo_Telefono', new FormControl(this.default_Number));
+            await  this._telService.add_Telefono(this.tel_Form.value);
 
-        console.log(telForm);
-        await this._telService.add_Telefono(telForm).then(() => {
-            loading.dismiss();
-            this.nav.navigateForward('/');
-        });
+        }
  }
 
 
@@ -129,9 +139,9 @@ export class CreatePage implements OnInit {
         console.log(this.tel_Form.value)
     }
 
-    delete_Controltel(control) {
-        this.tel_Form.removeControl(control.key)
-    }
+    delete_Controltel() {
+        this.show = false;
+ }
 
 
 
