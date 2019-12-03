@@ -6,11 +6,7 @@ import { ToastController } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
 import { ContactService } from "../../Services/contact.service";
-import {AngularFirestoreDocument, DocumentReference} from "@angular/fire/firestore";
-import {cell, Contacto, Direccion} from "../../Interfaces/contacto";
-import {Observable} from "rxjs";
 import {TelefonoService} from "../../Services/telefono.service";
-import {forEach} from "@angular-devkit/schematics";
 
 @Component({
   selector: 'app-create',
@@ -33,13 +29,13 @@ export class CreatePage implements OnInit {
   private default_Number:Number = null;
 
     constructor(private sanitizer: DomSanitizer,
-              private  builder: FormBuilder,
-              private crudService: ContactService,
-              private toastController: ToastController,
-              private router: Router,
-              private loadingController: LoadingController,
-              private nav: NavController,
-              private _telService: TelefonoService ) {}
+                private  builder: FormBuilder,
+                private crudService: ContactService,
+                private toastController: ToastController,
+                private router: Router,
+                private loadingController: LoadingController,
+                private nav: NavController,
+                private _telService: TelefonoService ) {}
 
 
     /*
@@ -96,7 +92,7 @@ export class CreatePage implements OnInit {
     }
 
 
-    async save_Contact(createForm, telForm,) {
+    async save_Contact(createForm, telForm) {
      const loading = await this.loadingController.create({
          message: 'Subiendo a la nube'
      });
@@ -104,8 +100,8 @@ export class CreatePage implements OnInit {
         this.contact_ID = await this.crudService.add_Contact(createForm).then((result) => {
             return result.id;
         });
-        console.log(this.contact_ID);
-        console.log(this.tel_Form, telForm);
+            console.log(this.contact_ID);
+            console.log(this.tel_Form, telForm);
         /*let data: cell[]=[];
         for (i=0; telForm.length; i++)
         {
@@ -113,7 +109,7 @@ export class CreatePage implements OnInit {
         }
         let id= `id_Contacto:${this.contact_ID}`;
         data.push(id);*/
-        if (this.show) {
+     if (this.show) {
             this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
             await this._telService.add_Telefono(this.tel_Form.value).then(() => {
                 loading.dismiss();
