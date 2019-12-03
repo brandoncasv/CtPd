@@ -79,6 +79,7 @@ ion-content {
   //Botones
   ion-grid > ion-row > ion-col {
     padding: 0 0 0 0;
+    font-size: 16px;
 
     ion-icon {
       width: 100%;
@@ -88,15 +89,34 @@ ion-content {
 
     ion-button {
       color: white;
+      :host {
+        margin-left: 0;
+        margin-right: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+      }
 
     }
   }
 
 
   //Formularios desplegables
-  ion-grid > ion-row > form > ion-col {
-    display: inline-flex;
-    padding: 0 0 0 0;
+
+  ion-grid > ion-row {
+    max-height: 38px;
+    display: flow;
+
+    form {
+      max-height: 38px;
+
+      //noinspection CssInvalidPropertyValue
+      ion-col {
+        display: inline-flex;
+        padding: 0 0 0 0;
+        height: 100%;
+        align-content: center;
+      }
+    }
 
   }
 
@@ -110,7 +130,23 @@ ion-grid > ion-row > form > ion-col > ion-item  {
     width: 100%;
   }
 }
+
+ion-grid > ion-row > form > ion-col > ion-button {
+  --border-radius: 60px;
+  max-height: 35px;
+  height: 100%;
+
 }
+  ion-grid > ion-row > form > ion-col > ion-input {
+    --padding: 0 0 0 0;
+    display: inline-flex;
+    input {
+
+    }
+  }
+
+}
+
 
 
 
