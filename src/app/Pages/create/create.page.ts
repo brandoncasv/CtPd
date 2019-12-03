@@ -6,11 +6,7 @@ import { ToastController } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
 import { ContactService } from "../../Services/contact.service";
-import {AngularFirestoreDocument, DocumentReference} from "@angular/fire/firestore";
-import {cell, Contacto, Direccion} from "../../Interfaces/contacto";
-import {Observable} from "rxjs";
 import {TelefonoService} from "../../Services/telefono.service";
-import {forEach} from "@angular-devkit/schematics";
 
 @Component({
   selector: 'app-create',

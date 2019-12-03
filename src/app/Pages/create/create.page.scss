@@ -8,6 +8,13 @@ ion-content {
   --ion-text-color: var(--ion-color-light);
 }
 
+ion-toolbar > ion-button {
+  margin: 0 0 0 0;
+}
+ion-toolbar > ion-button > ion-icon {
+  height: 100%;
+}
+
 ion-icon {
   width: 3vw;
   height: 3vh
