@@ -17,14 +17,13 @@ export class CreatePage implements OnInit {
 
   private create_Form: FormGroup;
   private tel_Form: FormGroup;
-  private show: boolean = false;
- /* private tel_Counter: number = 0;
-  private tipotel_Counter: number = 0;*/
   private dir_Form: FormGroup;
-  private dir_Counter: number = 0;
+  private show: boolean = false;
+  private showDir: boolean = false;
+  private showCorreo: boolean = false;
+
   private photo: any = '';
   public contact_ID: string;
-  private show_formcm: boolean = false;
   private default_Text: string = '';
   private default_Number:Number = null;
 
@@ -36,22 +35,6 @@ export class CreatePage implements OnInit {
                 private loadingController: LoadingController,
                 private nav: NavController,
                 private _telService: TelefonoService ) {}
-
-
-    /*
-    add_Controldir() {
-         this.dir_Counter++;
-         this.dir_Form.addControl('cp' + this.dir_Counter, new FormControl(''));
-         this.dir_Form.addControl('calle' + this.dir_Counter, new FormControl(''));
-         this.dir_Form.addControl('ciudad' + this.dir_Counter, new FormControl(''));
-         this.dir_Form.addControl('estado' + this.dir_Counter, new FormControl(''));
-         this.dir_Form.addControl('numero' + this.dir_Counter, new FormControl(''));
-         console.log(this.dir_Form.value);
-    }
-    delete_Controldir(control) {
-         this.dir_Counter--;
-         this.dir_Form.removeControl(control.key);
-    }*/
 
 
  ngOnInit() {
@@ -66,12 +49,8 @@ export class CreatePage implements OnInit {
          SitioWeb: ['', Validators.minLength(10)],
 
      });
-     this.tel_Form = this.builder.group({
-
-     });
-     this.dir_Form = this.builder.group({
-
-     });
+     this.tel_Form = this.builder.group({});
+     this.dir_Form = this.builder.group({});
 
  }
     async take_a_Photo() {
@@ -102,13 +81,7 @@ export class CreatePage implements OnInit {
         });
             console.log(this.contact_ID);
             console.log(this.tel_Form, telForm);
-        /*let data: cell[]=[];
-        for (i=0; telForm.length; i++)
-        {
-               data.push(telForm[i].value)
-        }
-        let id= `id_Contacto:${this.contact_ID}`;
-        data.push(id);*/
+
      if (this.show) {
             this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
             await this._telService.add_Telefono(this.tel_Form.value).then(() => {
@@ -116,15 +89,17 @@ export class CreatePage implements OnInit {
                 this.nav.navigateForward('/');
             });
         } else {
-            this.tel_Form.addControl('id_Contacto', new FormControl(this.default_Text));
+            this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
             this.tel_Form.addControl('Telefono', new FormControl(this.default_Text));
             this.tel_Form.addControl('tipo_Telefono', new FormControl(this.default_Number));
-            await  this._telService.add_Telefono(this.tel_Form.value);
+            await  this._telService.add_Telefono(this.tel_Form.value).then(() => {
+                loading.dismiss();
+                this.nav.navigateForward('/');
+            });
+
 
         }
  }
-
-
 
     add_Controltel() {
         this.show = true;
@@ -134,10 +109,32 @@ export class CreatePage implements OnInit {
             '', Validators.maxLength(10)));
         console.log(this.tel_Form.value)
     }
-
     delete_Controltel() {
         this.show = false;
  }
+    add_Controldir() {
+        this.showDir = true;
+        this.dir_Form.addControl('Calle', new FormControl(
+            '', Validators.minLength(10)));
+        this.dir_Form.addControl('Ciudad', new FormControl(
+            '', Validators.maxLength(10)));
+        this.dir_Form.addControl('Estado', new FormControl(
+            '', Validators.maxLength(10)));
+        this.dir_Form.addControl('Numero', new FormControl(
+            '', Validators.maxLength(10)));
+        this.dir_Form.addControl('CP', new FormControl(
+            '', Validators.maxLength(10)));
+        console.log(this.tel_Form.value)
+    }
+    delete_Controldir() {
+        this.showDir = false;
+    }
+    add_Correo() {
+        this.showCorreo = true;
+}
+    delete_Controlcorreo() {
+        this.showCorreo = false;
+    }
 
 
 

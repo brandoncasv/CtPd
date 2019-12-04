@@ -6,7 +6,6 @@ ion-header {
 
   ion-toolbar > ion-button  {
     display: flex;
-    box-sizing: border-box;
     margin:  0 0 0 0;
     height: 48px;
     width: 48px;
@@ -23,6 +22,16 @@ ion-header {
 ion-content {
   --ion-background-color: #000000;
   --ion-text-color: var(--ion-color-light);
+
+  //avatar y boton agregar foto
+  ion-grid > ion-row {
+    ion-avatar {
+      margin: 10px 0 10px 0;
+    }
+    ion-button {
+      margin: 0 0 10px 0;
+    }
+  }
 
   form > ion-row {
     align-items: center;
@@ -103,15 +112,13 @@ ion-content {
   //Formularios desplegables
 
   ion-grid > ion-row {
-    max-height: 38px;
     display: flow;
-
     form {
       max-height: 38px;
+      display: inline-flex;
+      width: 100%;
 
-      //noinspection CssInvalidPropertyValue
       ion-col {
-        display: inline-flex;
         padding: 0 0 0 0;
         height: 100%;
         align-content: center;
@@ -119,30 +126,43 @@ ion-content {
     }
 
   }
+ion-grid > ion-row > form > ion-col > ion-select {
+  text-align: start;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0 10px 0;
 
-ion-grid > ion-row > form > ion-col > ion-item  {
-  display: -webkit-inline-flex;
-  position: relative;
-  ion-select {
-    padding: 0 0 0 0;
-    text-align: start;
-    max-width: 100%;
-    width: 100%;
-  }
+
 }
 
 ion-grid > ion-row > form > ion-col > ion-button {
-  --border-radius: 60px;
-  max-height: 35px;
+  --border-radius: 80px;
   height: 100%;
+  width: 100%;
+  margin: 0 0 0 0;
+  ion-icon {
+    width: 70%;
+    height: 70%;
+  }
 
 }
   ion-grid > ion-row > form > ion-col > ion-input {
+    position: center;
     --padding: 0 0 0 0;
-    display: inline-flex;
+    display: compact;
+
     input {
+      display: inline-flex;
 
     }
+  }
+
+
+  //Boton y formulario de dirección
+  ion-grid > ion-row > form > ion-row {
+    display: flow;
+    width: 100%;
+
   }
 
 }
