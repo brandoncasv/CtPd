@@ -5,7 +5,7 @@
     </ion-buttons>
       <ion-title >Nuevo contacto</ion-title>
       <ion-button [disabled]="!create_Form.valid" type="submit"
-                  (click)="save_Contact(create_Form.value, tel_Form.value)"
+                  (click)="save_Contact(create_Form.value)"
                   slot="end" color="none" >
         <ion-icon name="checkmark"></ion-icon>
       </ion-button>
@@ -121,12 +121,12 @@
 
     <ion-row  *ngIf="showDir">
       <form [formGroup]="dir_Form">
-          <ion-col size=".5"></ion-col>
-          <ion-col size="4.5">
+          <ion-col size="1"></ion-col>
+          <ion-col size="4">
             <ion-input type="number" placeholder="No. Ext"
                        formControlName="Numero"></ion-input>
           </ion-col>
-          <ion-col size="4.5">
+          <ion-col size="4">
             <ion-input type="number" placeholder="C.P."
                        formControlName="CP"></ion-input>
           </ion-col>
@@ -138,7 +138,7 @@
           </ion-col>
       </form>
       <form [formGroup]="dir_Form">
-        <ion-col size=".5">
+        <ion-col size="1">
         </ion-col>
         <ion-col size="5">
           <ion-input type="text" placeholder="Calle"
@@ -169,14 +169,14 @@
 
 
     <ion-row  *ngIf="showCorreo">
-      <form [formGroup]="create_Form">
+      <form [formGroup]="correo_Form">
         <ion-col size="1"></ion-col>
         <ion-col size="8">
-          <ion-input type="number" placeholder="Correo electronico"
+          <ion-input type="text" placeholder="Correo electronico"
                      formControlName="Correo"></ion-input>
         </ion-col>
 
-        <ion-col size="3">
+        <ion-col size="2">
           <ion-button color="none" (click)="delete_Controlcorreo()" size="small">
             <ion-icon name="close-circle-outline" color="danger"></ion-icon>
           </ion-button>

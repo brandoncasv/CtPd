@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
 import { ContactService } from "../../Services/contact.service";
 import {TelefonoService} from "../../Services/telefono.service";
+import {DireccionService} from "../../Services/direccion.service";
 
 @Component({
   selector: 'app-create',
@@ -18,6 +19,8 @@ export class CreatePage implements OnInit {
   private create_Form: FormGroup;
   private tel_Form: FormGroup;
   private dir_Form: FormGroup;
+  private correo_Form: FormGroup;
+
   private show: boolean = false;
   private showDir: boolean = false;
   private showCorreo: boolean = false;
@@ -34,7 +37,8 @@ export class CreatePage implements OnInit {
                 private router: Router,
                 private loadingController: LoadingController,
                 private nav: NavController,
-                private _telService: TelefonoService ) {}
+                private _telService: TelefonoService,
+                private _dirService: DireccionService) {}
 
 
  ngOnInit() {
@@ -51,6 +55,7 @@ export class CreatePage implements OnInit {
      });
      this.tel_Form = this.builder.group({});
      this.dir_Form = this.builder.group({});
+     this.correo_Form = this.builder.group({});
 
  }
     async take_a_Photo() {
@@ -71,7 +76,7 @@ export class CreatePage implements OnInit {
     }
 
 
-    async save_Contact(createForm, telForm) {
+    async save_Contact(createForm) {
      const loading = await this.loadingController.create({
          message: 'Subiendo a la nube'
      });
@@ -80,25 +85,40 @@ export class CreatePage implements OnInit {
             return result.id;
         });
             console.log(this.contact_ID);
-            console.log(this.tel_Form, telForm);
 
      if (this.show) {
             this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
-            await this._telService.add_Telefono(this.tel_Form.value).then(() => {
-                loading.dismiss();
-                this.nav.navigateForward('/');
-            });
+            await this._telService.add_Telefono(this.tel_Form.value);
         } else {
             this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
             this.tel_Form.addControl('Telefono', new FormControl(this.default_Text));
             this.tel_Form.addControl('tipo_Telefono', new FormControl(this.default_Number));
-            await  this._telService.add_Telefono(this.tel_Form.value).then(() => {
-                loading.dismiss();
-                this.nav.navigateForward('/');
-            });
-
-
+            await  this._telService.add_Telefono(this.tel_Form.value);
         }
+
+     if(this.showCorreo){
+         await this.crudService.update_Contact(this.correo_Form.value, this.contact_ID);
+     }
+
+
+     if(this.showDir) {
+         this.dir_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
+         await this._dirService.add_Direccion(this.dir_Form.value).then(() => {
+             loading.dismiss();
+             this.nav.navigateForward('/');
+         });
+     } else {
+         this.dir_Form.addControl('Calle', new FormControl());
+         this.dir_Form.addControl('Ciudad', new FormControl());
+         this.dir_Form.addControl('Estado', new FormControl());
+         this.dir_Form.addControl('Numero', new FormControl());
+         this.dir_Form.addControl('CP', new FormControl());
+         await  this._telService.add_Telefono(this.dir_Form.value).then(() => {
+             loading.dismiss();
+             this.nav.navigateForward('/');
+         });
+     }
+
  }
 
     add_Controltel() {
@@ -131,6 +151,7 @@ export class CreatePage implements OnInit {
     }
     add_Correo() {
         this.showCorreo = true;
+        this.correo_Form.addControl('Correo', new FormControl(''));
 }
     delete_Controlcorreo() {
         this.showCorreo = false;

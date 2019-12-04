@@ -43,5 +43,9 @@ export class DireccionService {
         ));
   }
 
+  add_Direccion(direccion: Direccion) {
+      return this.direccion_Collection.add(direccion);
+  }
+
 
 }
