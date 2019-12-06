@@ -6,6 +6,7 @@ import { ContactService } from "../../Services/contact.service";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {DireccionService} from "../../Services/direccion.service";
+import {LoadingController, NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-details-contact',
@@ -22,7 +23,8 @@ export class DetailsContactPage implements OnInit {
               private _telefono: TelefonoService,
               private _contact: ContactService,
               private _direccion: DireccionService,
-              private router: Router) {
+              private _loadingController: LoadingController,
+              private _nav: NavController) {
   }
 
   ngOnInit() {
@@ -36,7 +38,21 @@ export class DetailsContactPage implements OnInit {
       this.cell = res;
     });
   }
-  /*back_Button() {
-    this.router.navigateByUrl('/home');
-  }*/
+
+   async delete_Contact() {
+
+     await this._contact.delete_Contact(this.contact_Id);
+    await this.cell.filter(check => {
+      if (check.id_Contacto !== '') {
+        this._telefono.delete_Telefono(check.id);
+      }
+    });
+     await this.address.filter(check => {
+      if (check.id_Contacto !== '') {
+        this._direccion.delete_Direccion(check.id);
+        this._nav.navigateForward('/');
+      }
+    });
+
+  }
 }

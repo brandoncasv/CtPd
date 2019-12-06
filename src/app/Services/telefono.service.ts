@@ -12,9 +12,11 @@ export class TelefonoService {
 
   private telefono_Collection: AngularFirestoreCollection<Telefono>;
   private telefono_Contacs: Observable<Telefono[]>;
+    private telefonos_Collection: AngularFirestoreCollection<Telefono>;
+    private telefonos_Contacs: Observable<Telefono[]>;
   constructor(private fs: AngularFirestore) {
-    this.telefono_Collection = fs.collection<Telefono>('Telefonos');
-    this.telefono_Contacs = this.telefono_Collection.snapshotChanges().pipe(map(
+    this.telefonos_Collection = fs.collection<Telefono>('Telefonos');
+    this.telefonos_Contacs = this.telefonos_Collection.snapshotChanges().pipe(map(
         actions => {
           return actions.map(a =>{
             const data = a.payload.doc.data();
@@ -48,6 +50,9 @@ export class TelefonoService {
 
     add_Telefono(telefono: Telefono) {
         return this.telefono_Collection.add(telefono);
+    }
+    delete_Telefono(id: string) {
+        return this.telefonos_Collection.doc(id).delete();
     }
 
 }

@@ -11,12 +11,14 @@ ion-content {
 ion-grid > ion-row > ion-col > ion-avatar {
   background: #00557f;
   margin-left: calc(50% - 32px);
+  h1 {
+    padding-top: calc(50% - 15.5px);
+    padding-right: calc(50% - 32px);
+    text-align: center;
+    margin: 0 0 0 0;
+  }
 }
-ion-grid > ion-row > ion-col > ion-avatar > h1 {
-  padding-top: calc(50% - 15.5px);
-  padding-right: calc(50% - 32px);
-  text-align: center;
-}
+
 
 
 
@@ -56,6 +58,7 @@ ion-button > ion-grid > ion-row > ion-col > ion-icon {
   height: 67%;
   text-align: start;
   padding-left: 5px;
+  text-transform: none;
 }
 .second-label {
   font-size: 10px;
@@ -64,6 +67,22 @@ ion-button > ion-grid > ion-row > ion-col > ion-icon {
   height: 33%;
   text-align: start;
   padding-left: 5px;
+  text-transform: none;
+
+}
+
+.correo {
+  display: flow;
+  h6 {
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 5px 0 15px 5px;
+    max-height: 36px;
+    text-align: start;
+    font-size: 14px;
+    text-transform: none;
+
+  }
 }
 
 ion-button > ion-grid > ion-row > ion-col > ion-icon {
