@@ -15,9 +15,15 @@
 <ion-content >
   <ion-grid>
     <ion-row  class="ion-justify-content-center">
-      <ion-avatar>
-        <ion-img [src]="photo"></ion-img>
-      </ion-avatar>
+      <ng-container>
+        <ion-avatar *ngIf="photo === ''">
+          <ion-img src="./assets/images/avatar.png"></ion-img>
+        </ion-avatar>
+        <ion-avatar *ngIf="photo !== ''">
+          <ion-img [src]="photo"></ion-img>
+        </ion-avatar>
+      </ng-container>
+
     </ion-row>
     <ion-row class="ion-justify-content-center" >
       <ion-button color="dark" (click)="take_a_Photo()">Agregar foto</ion-button>
@@ -183,9 +189,6 @@
         </ion-col>
       </form>
     </ion-row>
-
-
-
 
   </ion-grid>
 </ion-content>

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
+import {ActivatedRoute, NavigationExtras, Resolve, Router} from "@angular/router";
 import { TelefonoService } from "../../Services/telefono.service";
-import { Direccion, Telefono, Contact, address, cell} from "../../Interfaces/contacto";
+import {Direccion, Telefono, Contact, address, cell, Contacto} from "../../Interfaces/contacto";
 import { ContactService } from "../../Services/contact.service";
 import {Observable} from "rxjs";
-import {map} from "rxjs/operators";
 import {DireccionService} from "../../Services/direccion.service";
 import {LoadingController, NavController} from "@ionic/angular";
 
@@ -19,13 +18,14 @@ export class DetailsContactPage implements OnInit {
   address: Direccion[];
   contact: Observable<Contact>;
   contact_Id: string = '';
-  constructor(private  route: ActivatedRoute,
+  data: any = [];
+  constructor(private route: ActivatedRoute,
               private _telefono: TelefonoService,
               private _contact: ContactService,
               private _direccion: DireccionService,
               private _loadingController: LoadingController,
-              private _nav: NavController) {
-  }
+              private _nav: NavController,
+              private _router: Router) { }
 
   ngOnInit() {
     this.contact_Id = this.route.snapshot.params['id'];
@@ -55,4 +55,18 @@ export class DetailsContactPage implements OnInit {
     });
 
   }
+
+     asignData() {
+       this.contact.subscribe(res => {
+         this.data = res
+       });
+       console.log(this.data);
+       let navigationExtras: NavigationExtras = {
+        state: {
+            user: this.data
+        }
+      };
+      this._router.navigate(['edit'], navigationExtras);
+  }
+
 }

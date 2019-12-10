@@ -3,7 +3,7 @@ import {CameraResultType, CameraSource, Plugins} from '@capacitor/core';
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {FormControl, FormGroup, FormBuilder, Validators, FormGroupName} from "@angular/forms";
 import { ToastController } from "@ionic/angular";
-import { Router } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
 import { ContactService } from "../../Services/contact.service";
 import {TelefonoService} from "../../Services/telefono.service";
@@ -29,16 +29,16 @@ export class CreatePage implements OnInit {
   public contact_ID: string;
   private default_Text: string = '';
   private default_Number:Number = null;
-
     constructor(private sanitizer: DomSanitizer,
-                private  builder: FormBuilder,
+                private builder: FormBuilder,
                 private crudService: ContactService,
                 private toastController: ToastController,
-                private router: Router,
                 private loadingController: LoadingController,
                 private nav: NavController,
                 private _telService: TelefonoService,
-                private _dirService: DireccionService) {}
+                private _dirService: DireccionService) {
+
+    }
 
 
  ngOnInit() {

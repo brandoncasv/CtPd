@@ -6,7 +6,7 @@
     <ion-button slot="end" color="none" (click)="delete_Contact()">
       <ion-icon name="trash" color="primary"></ion-icon>
     </ion-button>
-    <ion-button color="none" slot="end">
+    <ion-button (click)="asignData()" color="none" slot="end">
       <ion-icon name="brush" color="primary"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -17,10 +17,9 @@
     <ion-row class="ion-justify-content-center" >
       <ion-col size="8" >
         <ion-avatar >
-          <h1 >{{ (contact | async)?.Nombre.charAt(0).toLocaleUpperCase() }}
-
-          </h1>
-          <h1 *ngIf="(contact | async)?.Apellidos === ''">{{ (contact | async)?.Apellidos.charAt(0).toLocaleUpperCase() }}</h1>
+          <h1 class="nombre_Avatar">{{ (contact | async)?.Nombre.charAt(0).toLocaleUpperCase() }}</h1>
+          <h1 class="apellido_Avatar" *ngIf="(contact | async)?.Apellidos !== ''">
+            {{ (contact | async)?.Apellidos.charAt(0).toLocaleUpperCase() }}</h1>
         </ion-avatar>
       </ion-col>
     </ion-row>

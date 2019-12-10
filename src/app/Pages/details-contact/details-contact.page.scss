@@ -11,14 +11,17 @@ ion-content {
 ion-grid > ion-row > ion-col > ion-avatar {
   background: #00557f;
   margin-left: calc(50% - 32px);
-  h1 {
-    padding-top: calc(50% - 15.5px);
-    padding-right: calc(50% - 32px);
-    text-align: center;
-    margin: 0 0 0 0;
-  }
 }
+.nombre_Avatar {
+  display: inline-flex;
+  margin: 0 0 0 0;
+  padding: 27% 0 0 23%;
+}
+.apellido_Avatar {
+  display: inline-flex;
+  margin: 0 0 0 0;
 
+}
 
 
 
