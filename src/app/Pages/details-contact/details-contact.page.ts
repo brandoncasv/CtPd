@@ -18,7 +18,7 @@ export class DetailsContactPage implements OnInit {
   address: Direccion[];
   contact: Observable<Contact>;
   contact_Id: string = '';
-  data: any = [];
+  data: any ;
   constructor(private route: ActivatedRoute,
               private _telefono: TelefonoService,
               private _contact: ContactService,
@@ -30,7 +30,9 @@ export class DetailsContactPage implements OnInit {
   ngOnInit() {
     this.contact_Id = this.route.snapshot.params['id'];
     this.contact = this._contact.get_Contact(this.contact_Id).valueChanges();
-
+    this.contact.subscribe(res => {
+        this.data = res;
+    });
     this._direccion.get_Direccion(this.contact_Id).subscribe(res=>{
       this.address =res;
     });
@@ -57,13 +59,12 @@ export class DetailsContactPage implements OnInit {
   }
 
      asignData() {
-       this.contact.subscribe(res => {
-         this.data = res
-       });
+
        console.log(this.data);
        let navigationExtras: NavigationExtras = {
         state: {
-            user: this.data
+            user: Object.values(this.data),
+            dir: this.address
         }
       };
       this._router.navigate(['edit'], navigationExtras);

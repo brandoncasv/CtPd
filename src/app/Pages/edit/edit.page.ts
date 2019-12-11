@@ -11,14 +11,16 @@ export class EditPage implements OnInit {
 
   private photo: any = '';
   private data;
+  private data2 ;
   constructor(private _route: ActivatedRoute,
               private router: Router,) { }
 
   ngOnInit() {
     this._route.queryParams.subscribe(params => {
       if(this.router.getCurrentNavigation().extras.state) {
-        this.data = this.router.getCurrentNavigation().extras.state.user;
-        console.log(this.data);
+        this.data = this.router.getCurrentNavigation().extras.state.dir;
+        this.data2 = this.router.getCurrentNavigation().extras.state.user;
+        console.log(this.data, this.data2);
 
       }
     });

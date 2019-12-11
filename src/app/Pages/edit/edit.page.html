@@ -54,9 +54,9 @@
 
 
 
-      <ion-row>
+      <ion-row >
         <ion-col size="1"></ion-col>
-        <ion-input placeholder="{{(data | async)?.Nombre}}"></ion-input>
+        <ion-input placeholder="{{data[4]}}"></ion-input>
       </ion-row>
       <ion-row >
         <ion-col size="1"></ion-col>
@@ -121,14 +121,14 @@
     </ion-row>
 
 
-    <ion-row  >
+    <ion-row *ngFor="let dat of data">
       <form >
         <ion-col size="1"></ion-col>
         <ion-col size="4">
-          <ion-input type="number" placeholder="No. Ext"></ion-input>
+          <ion-input type="number" placeholder="{{dat.Numero}}"></ion-input>
         </ion-col>
         <ion-col size="4">
-          <ion-input type="number" placeholder="C.P."></ion-input>
+          <ion-input type="number" placeholder="{{dat.CP}}"></ion-input>
         </ion-col>
 
         <ion-col size="2">
@@ -141,13 +141,13 @@
         <ion-col size="1">
         </ion-col>
         <ion-col size="5">
-          <ion-input type="text" placeholder="Calle"></ion-input>
+          <ion-input type="text" placeholder="{{dat.Calle}}"></ion-input>
         </ion-col>
         <ion-col size="3">
-          <ion-input type="text" placeholder="Ciudad"></ion-input>
+          <ion-input type="text" placeholder="{{dat.Ciudad}}"></ion-input>
         </ion-col>
         <ion-col size="3">
-          <ion-input type="text" placeholder="Estado"></ion-input>
+          <ion-input type="text" placeholder="{{dat.Estado}}"></ion-input>
         </ion-col>
       </form>
 
