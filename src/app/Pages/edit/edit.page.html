@@ -1,0 +1,184 @@
+<ion-header class="ion-text-center">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title >Nuevo contacto</ion-title>
+    <ion-button type="submit" slot="end" color="none" >
+      <ion-icon name="checkmark"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row  class="ion-justify-content-center">
+      <ng-container>
+        <ion-avatar *ngIf="photo === ''">
+          <ion-img src="./assets/images/avatar.png"></ion-img>
+        </ion-avatar>
+        <ion-avatar *ngIf="photo !== ''">
+          <ion-img [src]="photo"></ion-img>
+        </ion-avatar>
+      </ng-container>
+
+    </ion-row>
+    <ion-row class="ion-justify-content-center" >
+      <ion-button color="dark" (click)="take_a_Photo()">Agregar foto</ion-button>
+    </ion-row>
+
+
+    <form *ngFor="let data of data">
+
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="contact"></ion-icon>
+        </ion-col>
+        <ion-col size="5">
+          <ion-input placeholder="Prefijo" >
+          </ion-input>
+        </ion-col>
+
+        <ion-col size="6">
+
+          <ion-item>
+            <ion-label>Circulo</ion-label>
+            <ion-select  placeholder="Social">
+              <ion-select-option value="Otros">Otros</ion-select-option>
+              <ion-select-option value="Amigos">Amigos</ion-select-option>
+              <ion-select-option value="Trabajo">Trabajo</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row >
+        <ion-col size="1"></ion-col>
+        <ion-input placeholder="{{data[4]}}"></ion-input>
+      </ion-row>
+      <ion-row >
+        <ion-col size="1"></ion-col>
+        <ion-input placeholder="Apellidos"></ion-input>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-input placeholder="Apodo"></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-input placeholder="Sitio Web"></ion-input>
+      </ion-row>
+    </form>
+
+
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon name="call"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" expand="full" size="small"
+                    class="ion-text-capitalize" >Añadir teléfono</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row  >
+      <form>
+        <ion-col size="1"></ion-col>
+        <ion-col size="5">
+          <ion-input type="number" placeholder="Teléfono"></ion-input>
+        </ion-col>
+
+        <ion-col size="3">
+          <ion-select placeholder="Tipo">
+            <ion-label>Tipo</ion-label>
+            <ion-select-option value="movil">Movil</ion-select-option>
+            <ion-select-option value="casa">Casa</ion-select-option>
+            <ion-select-option value="trabajo">Trabajo</ion-select-option>
+          </ion-select>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button color="none"  size="small">
+            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </form>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon name="pin"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" expand="full" size="small"
+                    class="ion-text-capitalize" >Añadir dirección</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngFor="let dat of data">
+      <form >
+        <ion-col size="1"></ion-col>
+        <ion-col size="4">
+          <ion-input type="number" placeholder="{{dat.Numero}}"></ion-input>
+        </ion-col>
+        <ion-col size="4">
+          <ion-input type="number" placeholder="{{dat.CP}}"></ion-input>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button color="none" size="small">
+            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </form>
+      <form >
+        <ion-col size="1">
+        </ion-col>
+        <ion-col size="5">
+          <ion-input type="text" placeholder="{{dat.Calle}}"></ion-input>
+        </ion-col>
+        <ion-col size="3">
+          <ion-input type="text" placeholder="{{dat.Ciudad}}"></ion-input>
+        </ion-col>
+        <ion-col size="3">
+          <ion-input type="text" placeholder="{{dat.Estado}}"></ion-input>
+        </ion-col>
+      </form>
+
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon name="mail"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" expand="full" size="small"
+                    class="ion-text-capitalize">Añadir Correo</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row >
+      <form >
+        <ion-col size="1"></ion-col>
+        <ion-col size="8">
+          <ion-input type="text" placeholder="Correo electronico"></ion-input>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button color="none"  size="small">
+            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </form>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

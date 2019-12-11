@@ -15,24 +15,12 @@ import {map} from "rxjs/operators";
 export class ContactService {
 
   private contacts_Collection: AngularFirestoreCollection<Contacto>;
-  private all_Contacs: Observable<Contacto[]>;
    id_Contact: string = '';
   constructor(private fs: AngularFirestore) {
     this.contacts_Collection = fs.collection<Contacto>('Contacto');
-    this.all_Contacs = this.contacts_Collection.snapshotChanges().pipe(map(
-        actions => {
-          return actions.map(a => {
-            const data = a.payload.doc.data();
-            const id = a.payload.doc.id;
-            return {id, ...data};
-          });
-        }
-    ));
+
   }
 
-  get_Contacts() {
-    return this.all_Contacs;
-  }
   get_Contact(id: string): AngularFirestoreDocument<Contact> {
    return this.fs.collection('Contacto').doc(id);
   }

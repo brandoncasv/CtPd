@@ -43,5 +43,11 @@ export class DireccionService {
         ));
   }
 
+  add_Direccion(direccion: Direccion) {
+      return this.direccion_Collection.add(direccion);
+  }
+  delete_Direccion(id: string) {
+      return this.direccion_Collection.doc(id).delete();
+  }
 
 }
