@@ -141,11 +141,13 @@ ion-content {
     position: center;
     --padding: 0 0 0 0;
     display: compact;
-
     input {
       display: inline-flex;
-
     }
+  }
+  .native-input.sc-ion-input-md {
+    border-bottom: #003cff;
+
   }
 
 

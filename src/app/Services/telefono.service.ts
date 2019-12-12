@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import {cell, Telefono} from "../Interfaces/contacto";
+import {cell, Contacto, Telefono} from "../Interfaces/contacto";
 import actions from "@angular/fire/schematics/deploy/actions";
 
 @Injectable({
@@ -30,7 +30,7 @@ export class TelefonoService {
 
 
   get_Telefonos() {
-    return this.telefono_Contacs;
+    return this.telefonos_Contacs;
   }
 
   get_Telefono(id: string) {
@@ -49,10 +49,13 @@ export class TelefonoService {
   }
 
     add_Telefono(telefono: Telefono) {
-        return this.telefono_Collection.add(telefono);
+        return this.telefonos_Collection.add(telefono);
     }
     delete_Telefono(id: string) {
         return this.telefonos_Collection.doc(id).delete();
+    }
+    update_Telefono(telefono: Telefono, id: string) {
+        return this.telefonos_Collection.doc(id).update(telefono);
     }
 
 }

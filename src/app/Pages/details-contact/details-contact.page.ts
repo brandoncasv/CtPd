@@ -32,6 +32,7 @@ export class DetailsContactPage implements OnInit {
     this.contact = this._contact.get_Contact(this.contact_Id).valueChanges();
     this.contact.subscribe(res => {
         this.data = res;
+
     });
     this._direccion.get_Direccion(this.contact_Id).subscribe(res=>{
       this.address =res;
@@ -59,12 +60,13 @@ export class DetailsContactPage implements OnInit {
   }
 
      asignData() {
-
        console.log(this.data);
        let navigationExtras: NavigationExtras = {
         state: {
-            user: Object.values(this.data),
-            dir: this.address
+            user: this.data,
+            dir: this.address,
+            tel: this.cell,
+            id: this.contact_Id
         }
       };
       this._router.navigate(['edit'], navigationExtras);

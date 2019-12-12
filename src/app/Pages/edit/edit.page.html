@@ -3,8 +3,8 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title >Nuevo contacto</ion-title>
-    <ion-button type="submit" slot="end" color="none" >
+    <ion-title >Editar {{data2['Nombre']}}</ion-title>
+    <ion-button type="submit" slot="end" color="none" (click)="updateCollections()" >
       <ion-icon name="checkmark"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -35,7 +35,7 @@
           <ion-icon name="contact"></ion-icon>
         </ion-col>
         <ion-col size="5">
-          <ion-input placeholder="Prefijo" >
+          <ion-input placeholder="{{data2['Prefijo']}}" >
           </ion-input>
         </ion-col>
 
@@ -43,7 +43,7 @@
 
           <ion-item>
             <ion-label>Circulo</ion-label>
-            <ion-select  placeholder="Social">
+            <ion-select  placeholder="{{data2['Circulo']}}">
               <ion-select-option value="Otros">Otros</ion-select-option>
               <ion-select-option value="Amigos">Amigos</ion-select-option>
               <ion-select-option value="Trabajo">Trabajo</ion-select-option>
@@ -56,20 +56,20 @@
 
       <ion-row >
         <ion-col size="1"></ion-col>
-        <ion-input placeholder="{{data[4]}}"></ion-input>
+        <ion-input placeholder="{{data2['Nombre']}}"></ion-input>
       </ion-row>
       <ion-row >
         <ion-col size="1"></ion-col>
-        <ion-input placeholder="Apellidos"></ion-input>
+        <ion-input placeholder="{{data2['Apellidos']}}"></ion-input>
       </ion-row>
 
       <ion-row>
         <ion-col size="1"></ion-col>
-        <ion-input placeholder="Apodo"></ion-input>
+        <ion-input placeholder="{{data2['Apodo']}}"></ion-input>
       </ion-row>
       <ion-row>
         <ion-col size="1"></ion-col>
-        <ion-input placeholder="Sitio Web"></ion-input>
+        <ion-input placeholder="{{data2['Sitio Web']}}"></ion-input>
       </ion-row>
     </form>
 
@@ -86,15 +86,15 @@
     </ion-row>
 
 
-    <ion-row  >
+    <ion-row *ngFor="let data of data3" >
       <form>
         <ion-col size="1"></ion-col>
         <ion-col size="5">
-          <ion-input type="number" placeholder="Teléfono"></ion-input>
+          <ion-input type="number" placeholder="{{data.Telefono}}"></ion-input>
         </ion-col>
 
         <ion-col size="3">
-          <ion-select placeholder="Tipo">
+          <ion-select placeholder="{{data.tipo_Telefono}}">
             <ion-label>Tipo</ion-label>
             <ion-select-option value="movil">Movil</ion-select-option>
             <ion-select-option value="casa">Casa</ion-select-option>
@@ -169,7 +169,7 @@
       <form >
         <ion-col size="1"></ion-col>
         <ion-col size="8">
-          <ion-input type="text" placeholder="Correo electronico"></ion-input>
+          <ion-input type="text" placeholder="{{data2['Correo']}}"></ion-input>
         </ion-col>
 
         <ion-col size="2">

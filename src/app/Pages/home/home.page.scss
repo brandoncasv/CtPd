@@ -4,20 +4,23 @@ ion-header {
 
 
 }
-ion-header > ion-title {
-}
+ion-header > ion-toolbar {
+    width: 100%;
+  ion-searchbar {
+    --background: #505050;
+    --color: #ffffff;
+    --icon-color: #ffffff;
+    --placeholder-color: #ffffff;
+    --placeholder-font-weight: 50px;
+    padding: 10px 15px 0 15px;
+    div {
+      input {
+        }
+      }
+    }
+  }
 
-ion-searchbar {
-  --background: #505050;
-  --color: #ffffff;
-  --icon-color: #ffffff;
-  --placeholder-color: #ffffff;
-  --placeholder-font-weight: 50px;
-  padding: 10px 15px 0px 15px;
-  border-radius: 50px;
 
-
-}
 
 
 ion-content {
