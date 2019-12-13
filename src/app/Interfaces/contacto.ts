@@ -23,6 +23,12 @@ export interface Telefono {
     id: string;
 }
 
+export interface Fecha {
+    Descripcion: string,
+    id_Contacto:string,
+    Fecha: Date,
+}
+
 
 
 export interface Contact {

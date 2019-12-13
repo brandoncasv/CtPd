@@ -76,7 +76,7 @@ export class EditPage implements OnInit {
     this.photo = image.webPath;
   }
 
-  async updateCollections(contacForm, telForm, dirForm) {
+  async updateCollections(contacForm, telForm, dirForm, correoForm) {
     const loading = await this.loadingController.create({
       message: 'Actualizando datos...'
     });

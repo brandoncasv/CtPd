@@ -190,5 +190,52 @@
       </form>
     </ion-row>
 
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" expand="full" size="small"
+                    class="ion-text-capitalize" (click)="add_fecha()">Fecha</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row  *ngIf="showfecha">
+      <form [formGroup]="fecha_Form">
+        <ion-col size="1"></ion-col>
+        <ion-col size="4">
+          <ion-item>
+            <ion-datetime displayFormat="DD MMM YYYY" min="1900-01-00"
+                          doneText='Hecho' cancel-text="Cancelar"
+                          placeholder="Pulsa Aquí" max="2070-12-31"
+                          formControlName="Fecha"></ion-datetime>
+          </ion-item>
+
+        </ion-col>
+        <ion-col size="4">
+          <ion-select formControlName="tipo_Fecha" placeholder="Tipo">
+            <ion-label>Tipo</ion-label>
+            <ion-select-option value="Cumpleaños">Cumpleaños</ion-select-option>
+            <ion-select-option value="Recordatorio">Recordatorio</ion-select-option>
+            <ion-select-option value="Aniversario">Aniversario</ion-select-option>
+          </ion-select>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button color="none" (click)="delete_Controlfecha()" size="small">
+            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </form>
+      <form [formGroup]="fecha_Form">
+        <ion-col size="1"></ion-col>
+        <ion-col size="10">
+          <ion-textarea formControlName="Descripcion"></ion-textarea>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </form>
+    </ion-row>
+
   </ion-grid>
 </ion-content>
