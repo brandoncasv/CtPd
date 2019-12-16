@@ -2519,6 +2519,209 @@ var Toast = new ToastPluginWeb();
 
 //# sourceMappingURL=toast.js.map
 
+/***/ }),
+
+/***/ "./src/app/Services/contact.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/Services/contact.service.ts ***!
+  \*********************************************/
+/*! exports provided: ContactService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactService", function() { return ContactService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+
+
+
+let ContactService = class ContactService {
+    constructor(fs) {
+        this.fs = fs;
+        this.id_Contact = '';
+        this.contacts_Collection = fs.collection('Contacto');
+    }
+    get_Contact(id) {
+        return this.fs.collection('Contacto').doc(id);
+    }
+    update_Contact(contact, id) {
+        return this.contacts_Collection.doc(id).update(contact);
+    }
+    add_Contact(contac) {
+        return this.contacts_Collection.add(contac);
+    }
+    delete_Contact(id) {
+        return this.contacts_Collection.doc(id).delete();
+    }
+};
+ContactService.ctorParameters = () => [
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] }
+];
+ContactService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]])
+], ContactService);
+
+/*
+.then(
+    function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    }).catch(function (error)  {
+  console.error('Error agregando un documento: ', error);
+})
+
+
+
+.then(
+         function get_Id (docRef) {
+           let id = docRef.id;
+           console.log(docRef.id);
+           return id
+         }
+     ).catch(function (error) {
+       console.error('Error al agregar el documento', error);
+     })
+*/
+
+
+/***/ }),
+
+/***/ "./src/app/Services/direccion.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/Services/direccion.service.ts ***!
+  \***********************************************/
+/*! exports provided: DireccionService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DireccionService", function() { return DireccionService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+let DireccionService = class DireccionService {
+    constructor(fs) {
+        this.fs = fs;
+        this.direcciones_Collection = fs.collection('Direccion');
+        this.direcciones_Contacs = this.direcciones_Collection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data();
+                const id = a.payload.doc.id;
+                return Object.assign({ id }, data);
+            });
+        }));
+    }
+    get_Direcciones() {
+        return this.direcciones_Contacs;
+    }
+    get_Direccion(id) {
+        this.direccion_Collection = this.fs.collection('Direccion', ref => ref.where('id_Contacto', '==', id));
+        return this.direccion_Contacs = this.direccion_Collection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data();
+                const id = a.payload.doc.id;
+                return Object.assign({ id }, data);
+            });
+        }));
+    }
+    add_Direccion(direccion) {
+        return this.direcciones_Collection.add(direccion);
+    }
+    delete_Direccion(id) {
+        return this.direcciones_Collection.doc(id).delete();
+    }
+    update_Direccion(direccion, id) {
+        return this.direcciones_Collection.doc(id).update(direccion);
+    }
+};
+DireccionService.ctorParameters = () => [
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] }
+];
+DireccionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]])
+], DireccionService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/Services/telefono.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/Services/telefono.service.ts ***!
+  \**********************************************/
+/*! exports provided: TelefonoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TelefonoService", function() { return TelefonoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+let TelefonoService = class TelefonoService {
+    constructor(fs) {
+        this.fs = fs;
+        this.telefonos_Collection = fs.collection('Telefonos');
+        this.telefonos_Contacs = this.telefonos_Collection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data();
+                const id = a.payload.doc.id;
+                return Object.assign({ id }, data);
+            });
+        }));
+    }
+    get_Telefonos() {
+        return this.telefonos_Contacs;
+    }
+    get_Telefono(id) {
+        this.telefono_Collection = this.fs.collection('Telefonos', ref => ref.where('id_Contacto', '==', id));
+        return this.telefono_Contacs = this.telefono_Collection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data();
+                const id = a.payload.doc.id;
+                return Object.assign({ id }, data);
+            });
+        }));
+    }
+    add_Telefono(telefono) {
+        return this.telefonos_Collection.add(telefono);
+    }
+    delete_Telefono(id) {
+        return this.telefonos_Collection.doc(id).delete();
+    }
+    update_Telefono(telefono, id) {
+        return this.telefonos_Collection.doc(id).update(telefono);
+    }
+};
+TelefonoService.ctorParameters = () => [
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] }
+];
+TelefonoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]])
+], TelefonoService);
+
+
+
 /***/ })
 
 }]);

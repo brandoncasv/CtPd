@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule} from "@angular/fire/auth";
 import  { environment } from '../environments/environment'
 
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
@@ -24,6 +25,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
   AngularFirestoreModule.enablePersistence(),
   ReactiveFormsModule,
   FormsModule,
+  AngularFireAuthModule
   ],
   providers: [
     StatusBar,

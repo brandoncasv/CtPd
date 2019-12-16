@@ -26,7 +26,8 @@ export interface Telefono {
 export interface Fecha {
     Descripcion: string,
     id_Contacto:string,
-    Fecha: Date,
+    Fecha: string,
+    tipo_Fecha: string,
 }
 
 

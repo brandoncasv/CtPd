@@ -27,7 +27,6 @@ export class DireccionService {
     ));
 
   }
-
   get_Direcciones() {
     return this.direcciones_Contacs;
   }

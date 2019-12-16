@@ -16,12 +16,15 @@
   <ion-grid>
     <ion-row  class="ion-justify-content-center">
       <ng-container>
-        <ion-avatar *ngIf="photo === ''">
-          <ion-img src="./assets/images/avatar.png"></ion-img>
-        </ion-avatar>
-        <ion-avatar *ngIf="photo !== ''">
-          <ion-img [src]="photo"></ion-img>
-        </ion-avatar>
+        <ion-button class="customButton" (click)="showAction()" >
+          <ion-avatar *ngIf="photo === ''" >
+            <ion-img src="./assets/images/avatar.png"></ion-img>
+          </ion-avatar>
+          <ion-avatar *ngIf="photo !== ''">
+            <ion-img [src]="photo"></ion-img>
+          </ion-avatar>
+        </ion-button >
+
       </ng-container>
 
     </ion-row>
@@ -29,9 +32,7 @@
       <ion-button color="dark" (click)="take_a_Photo()">Agregar foto</ion-button>
     </ion-row>
 
-
     <form [formGroup]="create_Form">
-
       <ion-row>
         <ion-col size="1">
           <ion-icon name="contact"></ion-icon>
@@ -42,8 +43,7 @@
         </ion-col>
 
         <ion-col size="6">
-
-            <ion-item>
+          <ion-item>
               <ion-label>Circulo</ion-label>
               <ion-select formControlName="Circulo" placeholder="Circulo">
                 <ion-select-option value="Otros">Otros</ion-select-option>
@@ -53,8 +53,6 @@
             </ion-item>
         </ion-col>
       </ion-row>
-
-
 
       <ion-row>
         <ion-col size="1"></ion-col>
@@ -75,16 +73,14 @@
         <ion-input placeholder="Sitio Web" formControlName="SitioWeb" ></ion-input>
       </ion-row>
     </form>
-
-
-
     <ion-row>
       <ion-col size="1">
         <ion-icon name="call"></ion-icon>
       </ion-col>
       <ion-col>
         <ion-button fill="clear" expand="full" size="small"
-                    class="ion-text-capitalize" (click)="add_Controltel()">Añadir teléfono</ion-button>
+                    class="ion-text-capitalize" (click)="add_Controltel()">
+          Añadir teléfono</ion-button>
       </ion-col>
     </ion-row>
 
@@ -120,7 +116,8 @@
       </ion-col>
       <ion-col>
         <ion-button fill="clear" expand="full" size="small"
-                    class="ion-text-capitalize" (click)="add_Controldir()">Añadir dirección</ion-button>
+                    class="ion-text-capitalize" (click)="add_Controldir()">
+          Añadir dirección</ion-button>
       </ion-col>
     </ion-row>
 

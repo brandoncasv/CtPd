@@ -3,12 +3,13 @@ import {CameraResultType, CameraSource, Plugins} from '@capacitor/core';
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {FormControl, FormGroup, FormBuilder, Validators, FormGroupName} from "@angular/forms";
 import { ToastController } from "@ionic/angular";
-import {ActivatedRoute, Router} from "@angular/router";
 import { NavController, LoadingController } from "@ionic/angular";
 import { ContactService } from "../../Services/contact.service";
 import {TelefonoService} from "../../Services/telefono.service";
 import {DireccionService} from "../../Services/direccion.service";
 import {FechaService} from "../../Services/fecha.service";
+import { ActionSheetController } from '@ionic/angular';
+import {strategy} from "@angular-devkit/core/src/experimental/jobs";
 
 @Component({
   selector: 'app-create',
@@ -36,8 +37,8 @@ export class CreatePage implements OnInit {
                 private nav: NavController,
                 private _telService: TelefonoService,
                 private _dirService: DireccionService,
-                private _fechaService: FechaService) {
-    }
+                private _fechaService: FechaService,
+                private _action: ActionSheetController) {}
 
 
  ngOnInit() {
@@ -56,16 +57,30 @@ export class CreatePage implements OnInit {
      this.dir_Form = this.builder.group({});
      this.correo_Form = this.builder.group({});
      this.fecha_Form = this.builder.group({});
+
  }
-    async take_a_Photo() {
-        const image = await Plugins.Camera.getPhoto({
-            quality: 100,
-            allowEditing: false,
-            resultType: CameraResultType.Uri,
-            source: CameraSource.Camera
-        });
-        this.photo = image.webPath;
+
+    async take_a_Photo(id) {
+        if (id === 'Camara') {
+            const image = await Plugins.Camera.getPhoto({
+                quality: 100,
+                allowEditing: false,
+                resultType: CameraResultType.Uri,
+                source: CameraSource.Camera
+            });
+            this.photo = image.webPath;
+        } else {
+            const image = await Plugins.Camera.getPhoto({
+                quality: 100,
+                allowEditing: true,
+                resultType: CameraResultType.Uri,
+                source: CameraSource.Photos
+            });
+            this.photo = image.webPath;
+        }
+
     }
+
     async openToast(message) {
         const toast = await this.toastController.create({
             message: message,
@@ -88,11 +103,6 @@ export class CreatePage implements OnInit {
      if (this.show) {
             this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
             await this._telService.add_Telefono(this.tel_Form.value);
-        } else {
-            this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
-            this.tel_Form.addControl('Telefono', new FormControl(this.default_Text));
-            this.tel_Form.addControl('tipo_Telefono', new FormControl(this.default_Number));
-            await  this._telService.add_Telefono(this.tel_Form.value);
         }
 
      if(this.showCorreo){
@@ -106,17 +116,8 @@ export class CreatePage implements OnInit {
              loading.dismiss();
              this.nav.navigateForward('/');
          });
-     } else {
-         this.dir_Form.addControl('Calle', new FormControl());
-         this.dir_Form.addControl('Ciudad', new FormControl());
-         this.dir_Form.addControl('Estado', new FormControl());
-         this.dir_Form.addControl('Numero', new FormControl());
-         this.dir_Form.addControl('CP', new FormControl());
-         await  this._telService.add_Telefono(this.dir_Form.value).then(() => {
-             loading.dismiss();
-             this.nav.navigateForward('/');
-         });
      }
+
      if(this.showfecha) {
          this.fecha_Form.addControl('id_Contacto', new  FormControl(this.contact_ID));
          await this._fechaService.addFecha(this.fecha_Form.value).then(() => {
@@ -173,8 +174,28 @@ export class CreatePage implements OnInit {
         this.showfecha = false;
     }
 
-
-
+    async showAction() {
+        const actionSheet = await this._action.create({
+           header: 'Agrega una imagen',
+           buttons: [
+               {
+                   text: 'Camara',
+                   icon: 'camera',
+                   handler: (id: string = 'Camara') => {
+                       this.take_a_Photo(id);
+                   }
+               },
+               {
+                 text: 'Galeria',
+                 icon: 'images',
+                 handler: (id: string = 'Galeria') => {
+                     this.take_a_Photo(id);
+                 }
+               },
+               ]
+        });
+        await actionSheet.present();
+    }
 
 }
 

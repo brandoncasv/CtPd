@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Dec 09 18:53:08 CST 2019
+#Mon Dec 16 15:32:12 CST 2019
 940.baseType=DIRECTORY
 739.baseType=DIRECTORY
 38.path=public/8-es2015.js
@@ -180,7 +180,7 @@
 196.path=public/tap-click-ca00ce7f-js-es2015.js.map
 759.path=public/hardware-back-button-5afe3cb0-js-es5.js.map
 663.baseType=DIRECTORY
-674.path=public/default~Pages-create-create-module~Pages-edit-edit-module-es2015.js.map
+674.path=public/43-es2015.js
 353.baseType=DIRECTORY
 149.base=/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 795.base=/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
@@ -2240,7 +2240,7 @@ count=1135
 195.path=public/8-es5.js
 758.path=public/svg/ios-apps.svg
 879.base=/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
-673.path=public/43-es2015.js
+673.path=public/default~Pages-create-create-module~Pages-edit-edit-module-es2015.js.map
 360.baseType=DIRECTORY
 148.base=/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
 794.base=/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out

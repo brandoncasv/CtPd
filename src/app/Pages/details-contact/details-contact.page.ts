@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, NavigationExtras, Resolve, Router} from "@angular/router";
 import { TelefonoService } from "../../Services/telefono.service";
-import {Direccion, Telefono, Contact, address, cell, Contacto} from "../../Interfaces/contacto";
+import {Direccion, Telefono, Contact, address, cell, Contacto, Fecha} from "../../Interfaces/contacto";
 import { ContactService } from "../../Services/contact.service";
 import {Observable} from "rxjs";
 import {DireccionService} from "../../Services/direccion.service";
 import {LoadingController, NavController} from "@ionic/angular";
+import {FechaService} from "../../Services/fecha.service";
 
 @Component({
   selector: 'app-details-contact',
@@ -16,6 +17,7 @@ export class DetailsContactPage implements OnInit {
 
   cell: Telefono[];
   address: Direccion[];
+  fechas: Fecha[];
   contact: Observable<Contact>;
   contact_Id: string = '';
   data: any ;
@@ -25,20 +27,23 @@ export class DetailsContactPage implements OnInit {
               private _direccion: DireccionService,
               private _loadingController: LoadingController,
               private _nav: NavController,
-              private _router: Router) { }
+              private _router: Router,
+              private _fecha: FechaService) { }
 
   ngOnInit() {
     this.contact_Id = this.route.snapshot.params['id'];
     this.contact = this._contact.get_Contact(this.contact_Id).valueChanges();
     this.contact.subscribe(res => {
         this.data = res;
-
     });
     this._direccion.get_Direccion(this.contact_Id).subscribe(res=>{
       this.address =res;
     });
     this._telefono.get_Telefono(this.contact_Id).subscribe(res=>{
       this.cell = res;
+    });
+    this._fecha.getFecha(this.contact_Id).subscribe(res => {
+        this.fechas = res;
     });
   }
 
@@ -58,7 +63,6 @@ export class DetailsContactPage implements OnInit {
     });
 
   }
-
      asignData() {
        console.log(this.data);
        let navigationExtras: NavigationExtras = {

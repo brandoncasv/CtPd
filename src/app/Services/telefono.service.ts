@@ -3,7 +3,6 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import {cell, Contacto, Telefono} from "../Interfaces/contacto";
-import actions from "@angular/fire/schematics/deploy/actions";
 
 @Injectable({
   providedIn: 'root'
@@ -26,13 +25,9 @@ export class TelefonoService {
         }
     ));
   }
-
-
-
   get_Telefonos() {
     return this.telefonos_Contacs;
   }
-
   get_Telefono(id: string) {
     this.telefono_Collection = this.fs.collection('Telefonos',
     ref => ref.where('id_Contacto', '==', id));
@@ -45,9 +40,7 @@ export class TelefonoService {
           })
         }
     ));
-
   }
-
     add_Telefono(telefono: Telefono) {
         return this.telefonos_Collection.add(telefono);
     }

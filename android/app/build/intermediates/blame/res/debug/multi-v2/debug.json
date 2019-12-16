@@ -1422,40 +1422,6 @@
             ]
         },
         {
-            "outputFile": "/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/res/merged/debug/values-v16_values-v16.arsc.flat",
-            "map": [
-                {
-                    "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/4e9720f5b17a45219ea5cab2c0eabe39/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "223"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "121",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/root/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e7bb1cf3625b374da916db136aa618e9/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/res/merged/debug/values-sk_values-sk.arsc.flat",
             "map": [
                 {
@@ -1541,6 +1507,40 @@
                         "startOffsets": "2830,2938,3130,3256,3368,3583,3713,3856,4185,4413,4526,4727,4859,5081,5275,5373,5470",
                         "endColumns": "107,191,125,111,214,129,142,130,227,112,200,131,221,193,97,96,115",
                         "endOffsets": "2933,3125,3251,3363,3578,3708,3851,3982,4408,4521,4722,4854,5076,5270,5368,5465,5581"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/res/merged/debug/values-v16_values-v16.arsc.flat",
+            "map": [
+                {
+                    "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/4e9720f5b17a45219ea5cab2c0eabe39/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/root/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/e7bb1cf3625b374da916db136aa618e9/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]
