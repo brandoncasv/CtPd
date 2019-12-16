@@ -66,17 +66,17 @@ export class CreatePage implements OnInit {
                 quality: 100,
                 allowEditing: false,
                 resultType: CameraResultType.Uri,
-                source: CameraSource.Camera
+                source: CameraSource.Prompt
             });
             this.photo = image.webPath;
         } else {
             const image = await Plugins.Camera.getPhoto({
                 quality: 100,
-                allowEditing: true,
+                allowEditing: false,
                 resultType: CameraResultType.Uri,
                 source: CameraSource.Photos
             });
-            this.photo = image.webPath;
+            this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image &&(image.dataUrl));
         }
 
     }
