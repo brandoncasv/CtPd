@@ -29,7 +29,7 @@
     </ion-row>
 
     <ng-container *ngFor="let cell of cell" >
-      <ion-button expand="block" color="dark" *ngIf="cell.Telefono !== '' ">
+      <ion-button expand="block" color="dark" *ngIf="cell.Telefono !== null ">
         <ion-grid>
           <ion-row>
             <ion-col size="1">

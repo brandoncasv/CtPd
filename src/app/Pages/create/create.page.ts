@@ -26,9 +26,7 @@ export class CreatePage implements OnInit {
   private photo: any = '';
   public contact_ID; default_Text: string;
   private default_Number:Number = null;
-  customDayShortNames = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'];
-  customShowMonth = ['Enero', 'Febrero', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
-                    'Octubre', 'Noviembre', 'Diciembre'];
+
     constructor(private sanitizer: DomSanitizer,
                 private builder: FormBuilder,
                 private crudService: ContactService,
@@ -42,7 +40,6 @@ export class CreatePage implements OnInit {
 
 
  ngOnInit() {
-
      this.create_Form = this.builder.group({
          Nombre: ['', Validators.required],
          Apellidos: [''],
@@ -78,17 +75,7 @@ export class CreatePage implements OnInit {
             });
             this.photo = image.webPath;
         }
-
     }
-
-    async openToast(message) {
-        const toast = await this.toastController.create({
-            message: message,
-            duration: 2000,
-        });
-        toast.present();
-    }
-
 
     async save_Contact(createForm) {
      const loading = await this.loadingController.create({
@@ -96,20 +83,27 @@ export class CreatePage implements OnInit {
      });
      await loading.present();
         this.contact_ID = await this.crudService.add_Contact(createForm).then((result) => {
+            loading.dismiss();
+            this.nav.navigateForward('/');
             return result.id;
         });
             console.log(this.contact_ID);
 
      if (this.show) {
             this.tel_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
-            await this._telService.add_Telefono(this.tel_Form.value);
+            await this._telService.add_Telefono(this.tel_Form.value).then(() => {
+                loading.dismiss();
+                this.nav.navigateForward('/');
+            });
+
         }
 
      if(this.showCorreo){
-         await this.crudService.update_Contact(this.correo_Form.value, this.contact_ID);
+         await this.crudService.update_Contact(this.correo_Form.value, this.contact_ID).then(() => {
+             loading.dismiss();
+             this.nav.navigateForward('/');
+         });
      }
-
-
      if(this.showDir) {
          this.dir_Form.addControl('id_Contacto', new FormControl(this.contact_ID));
          await this._dirService.add_Direccion(this.dir_Form.value).then(() => {
@@ -127,7 +121,6 @@ export class CreatePage implements OnInit {
      }
 
  }
-
     add_Controltel() {
         this.show = true;
         this.tel_Form.addControl('Telefono', new FormControl(
@@ -163,7 +156,6 @@ export class CreatePage implements OnInit {
     delete_Controlcorreo() {
         this.showCorreo = false;
     }
-
     add_fecha() {
         this.showfecha = true;
         this.fecha_Form.addControl('Descripcion', new FormControl(''));
@@ -195,6 +187,13 @@ export class CreatePage implements OnInit {
                ]
         });
         await actionSheet.present();
+    }
+    async openToast(message) {
+        const toast = await this.toastController.create({
+            message: message,
+            duration: 2000,
+        });
+        toast.present();
     }
 
 }

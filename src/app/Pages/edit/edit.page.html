@@ -14,77 +14,71 @@
   <ion-grid>
     <ion-row  class="ion-justify-content-center">
       <ng-container>
-        <ion-avatar *ngIf="photo === ''">
-          <ion-img src="./assets/images/avatar.png"></ion-img>
-        </ion-avatar>
-        <ion-avatar *ngIf="photo !== ''">
-          <ion-img [src]="photo"></ion-img>
-        </ion-avatar>
-      </ng-container>
-
-    </ion-row>
-    <ion-row class="ion-justify-content-center" >
-      <ion-button color="dark" (click)="take_a_Photo()">Agregar foto</ion-button>
+        <ion-button class="customButton" (click)="showAction()" >
+          <ion-avatar *ngIf="photo === ''" >
+            <ion-img src="./assets/images/avatar.png"></ion-img>
+          </ion-avatar>
+          <ion-avatar *ngIf="photo !== ''">
+            <ion-img [src]="photo"></ion-img>
+          </ion-avatar>
+        </ion-button >
+       </ng-container>
     </ion-row>
 
-
-    <form *ngFor="let data of data">
-
-      <ion-row>
-        <ion-col size="1">
-          <ion-icon name="contact"></ion-icon>
-        </ion-col>
-        <ion-col size="5">
-          <ng-container>
+    <ng-container>
+      <form>
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon name="contact"></ion-icon>
+          </ion-col>
+          <ion-col size="5">
             <ion-input *ngIf="data2['Prefijo'] !== ''" placeholder="{{data2['Prefijo']}}" >
             </ion-input>
             <ion-input *ngIf="data2['Prefijo'] === ''" placeholder="Prefijo" >
             </ion-input>
-          </ng-container>
+          </ion-col>
 
-        </ion-col>
-
-        <ion-col size="6">
-
-          <ion-item>
-            <ion-label>Circulo</ion-label>
-            <ion-select *ngIf="data2['Circulo'] !== ''" placeholder="{{data2['Circulo']}}">
-              <ion-select-option value="Otros">Otros</ion-select-option>
-              <ion-select-option value="Amigos">Amigos</ion-select-option>
-              <ion-select-option value="Trabajo">Trabajo</ion-select-option>
-            </ion-select>
-            <ion-select  *ngIf="data2['Circulo'] === ''" placeholder="Circulo">
-              <ion-select-option value="Otros">Otros</ion-select-option>
-              <ion-select-option value="Amigos">Amigos</ion-select-option>
-              <ion-select-option value="Trabajo">Trabajo</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-col>
-      </ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Circulo</ion-label>
+              <ion-select *ngIf="data2['Circulo'] !== ''" placeholder="{{data2['Circulo']}}">
+                <ion-select-option value="Otros">Otros</ion-select-option>
+                <ion-select-option value="Amigos">Amigos</ion-select-option>
+                <ion-select-option value="Trabajo">Trabajo</ion-select-option>
+              </ion-select>
+              <ion-select  *ngIf="data2['Circulo'] === ''" placeholder="Circulo">
+                <ion-select-option value="Otros">Otros</ion-select-option>
+                <ion-select-option value="Amigos">Amigos</ion-select-option>
+                <ion-select-option value="Trabajo">Trabajo</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
 
 
-      <ion-row >
-        <ion-col size="1"></ion-col>
-        <ion-input placeholder="{{data2['Nombre']}}"></ion-input>
-      </ion-row>
-      <ion-row >
-        <ion-col size="1"></ion-col>
-        <ion-input *ngIf="data2['Apellido'] !== ''" placeholder="{{data2['Apellidos']}}"></ion-input>
-        <ion-input *ngIf="data2['Apellido'] === ''" placeholder="Apellidos"></ion-input>
-      </ion-row>
+        <ion-row >
+          <ion-col size="1"></ion-col>
+          <ion-input placeholder="{{data2['Nombre']}}"></ion-input>
+        </ion-row>
+        <ion-row >
+          <ion-col size="1"></ion-col>
+          <ion-input *ngIf="data2['Apellido'] !== ''" placeholder="{{data2['Apellidos']}}"></ion-input>
+          <ion-input *ngIf="data2['Apellido'] === ''" placeholder="Apellidos"></ion-input>
+        </ion-row>
 
-      <ion-row>
-        <ion-col size="1"></ion-col>
-        <ion-input *ngIf="data2['Apodo'] !== ''" placeholder="{{data2['Apodo']}}"></ion-input>
-        <ion-input *ngIf="data2['Apodo'] === ''" placeholder="Apodo"></ion-input>
-      </ion-row>
-      <ion-row>
-        <ion-col size="1"></ion-col>
-        <ion-input *ngIf="data2['SitioWeb'] !== ''" placeholder="{{data2['SitioWeb']}}"></ion-input>
-        <ion-input *ngIf="data2['SitioWeb'] === ''" placeholder="SitioWeb"></ion-input>
-      </ion-row>
-    </form>
+        <ion-row>
+          <ion-col size="1"></ion-col>
+          <ion-input *ngIf="data2['Apodo'] !== ''" placeholder="{{data2['Apodo']}}"></ion-input>
+          <ion-input *ngIf="data2['Apodo'] === ''" placeholder="Apodo"></ion-input>
+        </ion-row>
+        <ion-row>
+          <ion-col size="1"></ion-col>
+          <ion-input *ngIf="data2['SitioWeb'] !== ''" placeholder="{{data2['SitioWeb']}}"></ion-input>
+          <ion-input *ngIf="data2['SitioWeb'] === ''" placeholder="SitioWeb"></ion-input>
+        </ion-row>
+      </form>
+    </ng-container>
 
 
 
@@ -98,109 +92,121 @@
       </ion-col>
     </ion-row>
 
+    <ng-container>
+      <ion-row >
+        <form>
+          <ion-col size="1"></ion-col>
+          <ion-col size="5">
+            <ion-input *ngIf="showTel === true" type="number"
+                       placeholder="{{data3['Telefono']}}"></ion-input>
+            <ion-input *ngIf="showTel === false" type="number"
+                       placeholder="Telefono"></ion-input>
+          </ion-col>
 
-    <ion-row *ngFor="let data of data3" >
-      <form>
-        <ion-col size="1"></ion-col>
-        <ion-col size="5">
-          <ion-input type="number" *ngIf="data.Telefono !== null"
-                     placeholder="{{data.Telefono}}"></ion-input>
-          <ion-input type="number" *ngIf="data.Telefono === null"
-                     placeholder="Numero Telefonico"></ion-input>
-        </ion-col>
+          <ion-col size="3">
+            <ion-select *ngIf="showTel === true"
+                        placeholder="{{data3['tipo_Telefono']}}">
+              <ion-label>Tipo</ion-label>
+              <ion-select-option value="movil">Movil</ion-select-option>
+              <ion-select-option value="casa">Casa</ion-select-option>
+              <ion-select-option value="trabajo">Trabajo</ion-select-option>
+            </ion-select>
 
-        <ion-col size="3">
-          <ion-select *ngIf="data.tipo_Telefono !== null" placeholder="{{data.tipo_Telefono}}">
-            <ion-label>Tipo</ion-label>
-            <ion-select-option value="movil">Movil</ion-select-option>
-            <ion-select-option value="casa">Casa</ion-select-option>
-            <ion-select-option value="trabajo">Trabajo</ion-select-option>
-          </ion-select>
-          <ion-select *ngIf="data.tipo_Telefono === null" placeholder="Tipo">
-            <ion-label>Tipo</ion-label>
-            <ion-select-option value="movil">Movil</ion-select-option>
-            <ion-select-option value="casa">Casa</ion-select-option>
-            <ion-select-option value="trabajo">Trabajo</ion-select-option>
-          </ion-select>
-        </ion-col>
+           <ion-select *ngIf="showTel === false"
+                        placeholder="Tipo">
+              <ion-label>Tipo</ion-label>
+              <ion-select-option value="movil">Movil</ion-select-option>
+              <ion-select-option value="casa">Casa</ion-select-option>
+              <ion-select-option value="trabajo">Trabajo</ion-select-option>
+            </ion-select>
+          </ion-col>
 
-        <ion-col size="2">
-          <ion-button color="none"  size="small">
-            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </form>
-    </ion-row>
+          <ion-col size="2">
+            <ion-button color="none"  size="small">
+              <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </form>
+      </ion-row>
+    </ng-container>
 
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name="pin"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button fill="clear" expand="full" size="small"
-                    class="ion-text-capitalize" >Añadir dirección</ion-button>
-      </ion-col>
-    </ion-row>
-
-
-    <ion-row *ngFor="let dat of data">
-      <form >
-        <ion-col size="1"></ion-col>
-        <ion-col size="4">
-          <ion-input type="number" placeholder="{{dat.Numero}}"></ion-input>
-        </ion-col>
-        <ion-col size="4">
-          <ion-input type="number" placeholder="{{dat.CP}}"></ion-input>
-        </ion-col>
-
-        <ion-col size="2">
-          <ion-button color="none" size="small">
-            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </form>
-      <form >
-        <ion-col size="1">
-        </ion-col>
-        <ion-col size="5">
-          <ion-input type="text" placeholder="{{dat.Calle}}"></ion-input>
-        </ion-col>
-        <ion-col size="3">
-          <ion-input type="text" placeholder="{{dat.Ciudad}}"></ion-input>
-        </ion-col>
-        <ion-col size="3">
-          <ion-input type="text" placeholder="{{dat.Estado}}"></ion-input>
-        </ion-col>
-      </form>
+    <!--
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon name="pin"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" expand="full" size="small"
+                        class="ion-text-capitalize" >Añadir dirección</ion-button>
+          </ion-col>
+        </ion-row>
 
 
-    </ion-row>
+        <ion-row *ngFor="let dat of data">
+          <form >
+            <ion-col size="1"></ion-col>
+            <ion-col size="4">
+              <ion-input *ngIf="dat.Numero !== ''" type="number" placeholder="{{dat.Numero}}"></ion-input>
+              <ion-input *ngIf="dat.Numero === ''" type="number" placeholder="Numero ext."></ion-input>
+            </ion-col>
+            <ion-col size="4">
+              <ion-input *ngIf="dat.CP !== ''" type="number" placeholder="{{dat.CP}}"></ion-input>
+              <ion-input *ngIf="dat.CP === ''" type="number" placeholder="Ingresa tu codigo postal"></ion-input>
+            </ion-col>
 
-    <ion-row>
-      <ion-col size="1">
-        <ion-icon name="mail"></ion-icon>
-      </ion-col>
-      <ion-col>
-        <ion-button fill="clear" expand="full" size="small"
-                    class="ion-text-capitalize">Añadir Correo</ion-button>
-      </ion-col>
-    </ion-row>
+            <ion-col size="2">
+              <ion-button color="none" size="small">
+                <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </form>
+          <form >
+            <ion-col size="1">
+            </ion-col>
+            <ion-col size="5">
+              <ion-input *ngIf="dat.Calle !== ''" type="text" placeholder="{{dat.Calle}}"></ion-input>
+              <ion-input *ngIf="dat.Calle === ''" type="text" placeholder="Calle"></ion-input>
+            </ion-col>
+            <ion-col size="3">
+              <ion-input *ngIf="dat.Ciudad !== ''" type="text" placeholder="{{dat.Ciudad}}"></ion-input>
+              <ion-input *ngIf="dat.Ciudad === ''" type="text" placeholder="Ciudad"></ion-input>
+            </ion-col>
+            <ion-col size="3">
+              <ion-input *ngIf="dat.Estado !== ''" type="text" placeholder="{{dat.Estado}}"></ion-input>
+              <ion-input *ngIf="dat.Estado === ''" type="text" placeholder="Estado"></ion-input>
+            </ion-col>
+          </form>
 
 
-    <ion-row >
-      <form >
-        <ion-col size="1"></ion-col>
-        <ion-col size="8">
-          <ion-input type="text" placeholder="{{data2['Correo']}}"></ion-input>
-        </ion-col>
+        </ion-row>
 
-        <ion-col size="2">
-          <ion-button color="none"  size="small">
-            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </form>
-    </ion-row>
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon name="mail"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" expand="full" size="small"
+                        class="ion-text-capitalize">Añadir Correo</ion-button>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row >
+          <form >
+            <ion-col size="1"></ion-col>
+            <ion-col size="8">
+              <ion-input *ngIf="data2['Correo'] !== ''" type="correo" placeholder="{{data2['Correo']}}"></ion-input>
+              <ion-input *ngIf="data2['Correo'] === ''" type="correo" placeholder="Ingresa tu correo"></ion-input>
+
+            </ion-col>
+
+            <ion-col size="2">
+              <ion-button color="none"  size="small">
+                <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </form>
+        </ion-row>-->
 
   </ion-grid>
 </ion-content>

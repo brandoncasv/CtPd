@@ -24,11 +24,17 @@ ion-content {
 
   //avatar y boton agregar foto
   ion-grid > ion-row {
-    ion-avatar {
-      margin: 10px 0 10px 0;
-    }
-    ion-button {
-      margin: 0 0 10px 0;
+    .customButton {
+      --background: none;
+      width: 64px;
+      height: 64px;
+      --border-radius: 50%;
+      --padding-end: 0;
+      --padding-start: 0;
+
+      ion-avatar {
+        margin: 10px 0 10px 0;
+      }
     }
   }
 

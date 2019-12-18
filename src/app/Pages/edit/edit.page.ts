@@ -7,6 +7,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoadingController, NavController, ToastController} from "@ionic/angular";
 import {TelefonoService} from "../../Services/telefono.service";
 import {DireccionService} from "../../Services/direccion.service";
+import { ActionSheetController } from "@ionic/angular";
 
 @Component({
   selector: 'app-edit',
@@ -19,12 +20,13 @@ export class EditPage implements OnInit {
   private data; id_contacto; data2; data3;
   private contac_Form: FormGroup; tel_Form: FormGroup;
   private dir_Form: FormGroup; correo_Form: FormGroup;
-
+  private show; showDir; showCorreo: boolean = false;
+  private showfecha; showTel: boolean = false;
   constructor(private _route: ActivatedRoute,
               private router: Router,
               private _contact: ContactService,
               private _builder: FormBuilder,
-
+              private _action: ActionSheetController,
               private toastController: ToastController,
               private loadingController: LoadingController,
               private nav: NavController,
@@ -34,11 +36,14 @@ export class EditPage implements OnInit {
   ngOnInit() {
     this._route.queryParams.subscribe(params => {
       if(this.router.getCurrentNavigation().extras.state) {
-        this.data = this.router.getCurrentNavigation().extras.state.dir;
         this.id_contacto = this.router.getCurrentNavigation().extras.state.id;
         this.data2 = this.router.getCurrentNavigation().extras.state.user;
         this.data3 = this.router.getCurrentNavigation().extras.state.tel;
-          console.log(this.data, this.data2, Object.values(this.data3[0]));
+
+        this.showTel = this.data3 !== undefined;
+
+        this.data = this.router.getCurrentNavigation().extras.state.dir;
+          console.log( this.data2, this.data3, this.showTel);
 
       }
     });
@@ -66,14 +71,24 @@ export class EditPage implements OnInit {
     this.correo_Form = this._builder.group({});
   }
 
-  async take_a_Photo() {
-    const image = await Plugins.Camera.getPhoto({
-      quality: 100,
-      allowEditing: false,
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera
-    });
-    this.photo = image.webPath;
+  async take_a_Photo(id) {
+    if (id === 'Camara') {
+      const image = await Plugins.Camera.getPhoto({
+        quality: 100,
+        allowEditing: false,
+        resultType: CameraResultType.Uri,
+        source: CameraSource.Camera
+      });
+      this.photo = image.webPath;
+    } else {
+      const image = await Plugins.Camera.getPhoto({
+        quality: 100,
+        allowEditing: true,
+        resultType: CameraResultType.Uri,
+        source: CameraSource.Photos
+      });
+      this.photo = image.webPath;
+    }
   }
 
   async updateCollections(contacForm, telForm, dirForm, correoForm) {
@@ -90,8 +105,29 @@ export class EditPage implements OnInit {
     console.log(idTel[0].toString(), idDir);
 
   }
-  obtainData(array) {
 
+  async showAction() {
+    const actionSheet = await this._action.create({
+      header: 'Agrega una imagen',
+      buttons: [
+        {
+          text: 'Camara',
+          icon: 'camera',
+          handler: (id: string = 'Camara') => {
+            this.take_a_Photo(id);
+          }
+        },
+        {
+          text: 'Galeria',
+          icon: 'images',
+          handler: (id: string = 'Galeria') => {
+            this.take_a_Photo(id);
+          }
+        },
+      ]
+    });
+    await actionSheet.present();
   }
+
 
 }
