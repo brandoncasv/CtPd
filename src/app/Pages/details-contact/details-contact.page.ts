@@ -20,7 +20,7 @@ export class DetailsContactPage implements OnInit {
   fechas: Fecha[];
   contact: Observable<Contact>;
   contact_Id: string = '';
-  data; tel: any ;
+  data; dir; tel; fecha: any ;
   constructor(private route: ActivatedRoute,
               private _telefono: TelefonoService,
               private _contact: ContactService,
@@ -63,14 +63,17 @@ export class DetailsContactPage implements OnInit {
     });
 
   }
-     asignData() {
-         this.tel = this.cell[0];
-         console.log(this.data, this.tel);
+   async asignData() {
+         this.tel = await this.cell[0];
+         this.dir = await this.address[0];
+         this.fecha = await this.fechas[0];
+         console.log(this.contact, this.tel);
        let navigationExtras: NavigationExtras = {
         state: {
             user: this.data,
-            dir: this.address,
+            dir: this.dir,
             tel: this.tel,
+            fecha: this.fecha,
             id: this.contact_Id
         }
       };

@@ -3,7 +3,7 @@ import {CameraResultType, CameraSource, Plugins} from "@capacitor/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import { Contacto, Direccion, Telefono } from "../../Interfaces/contacto";
 import { ContactService } from "../../Services/contact.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoadingController, NavController, ToastController} from "@ionic/angular";
 import {TelefonoService} from "../../Services/telefono.service";
 import {DireccionService} from "../../Services/direccion.service";
@@ -17,11 +17,13 @@ import { ActionSheetController } from "@ionic/angular";
 export class EditPage implements OnInit {
 
   private photo: any = '';
-  private data; id_contacto; data2; data3;
+  private data; id_contacto; data2; data3; fechaData = [];
   private contac_Form: FormGroup; tel_Form: FormGroup;
   private dir_Form: FormGroup; correo_Form: FormGroup;
-  private show; showDir; showCorreo: boolean = false;
+  private showDir; showCorreo: boolean = false;
   private showfecha; showTel: boolean = false;
+  private showLocalTel; showLocalDir;
+  showLocalCorreo; showLocalFecha:boolean = false;
   constructor(private _route: ActivatedRoute,
               private router: Router,
               private _contact: ContactService,
@@ -33,17 +35,19 @@ export class EditPage implements OnInit {
               private _telService: TelefonoService,
               private _dirService: DireccionService) { }
 
-  ngOnInit() {
+   ngOnInit() {
     this._route.queryParams.subscribe(params => {
       if(this.router.getCurrentNavigation().extras.state) {
         this.id_contacto = this.router.getCurrentNavigation().extras.state.id;
         this.data2 = this.router.getCurrentNavigation().extras.state.user;
         this.data3 = this.router.getCurrentNavigation().extras.state.tel;
+        this.data = this.router.getCurrentNavigation().extras.state.dir;
+        this.fechaData = this.router.getCurrentNavigation().extras.state.fecha;
 
         this.showTel = this.data3 !== undefined;
-
-        this.data = this.router.getCurrentNavigation().extras.state.dir;
-          console.log( this.data2, this.data3, this.showTel);
+        this.showDir = this.data !== undefined;
+        this.showfecha = this.fechaData !== undefined;
+          console.log( this.data2, this.data3, this.showTel, this.fechaData, this.showfecha);
 
       }
     });
@@ -129,5 +133,16 @@ export class EditPage implements OnInit {
     await actionSheet.present();
   }
 
+addTel() {
+  this.showLocalTel = true;
+  this.tel_Form.addControl('Telefono', new FormControl(
+      '', Validators.minLength(10)));
+  this.tel_Form.addControl('tipo_Telefono', new FormControl(
+      '', Validators.maxLength(10)));
+  console.log(this.tel_Form.value)
+  }
+  deleteTel() {
+    this.showLocalTel = false;
+  }
 
 }
