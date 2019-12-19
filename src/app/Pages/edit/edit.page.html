@@ -138,7 +138,7 @@
           </ion-col>
           <ion-col>
             <ion-button fill="clear" expand="full" size="small"
-                        class="ion-text-capitalize" >Añadir dirección</ion-button>
+                        class="ion-text-capitalize" (click)="addDir()">Añadir dirección</ion-button>
           </ion-col>
         </ion-row>
 
@@ -148,15 +148,20 @@
             <ion-col size="1"></ion-col>
             <ion-col size="4">
               <ion-input *ngIf="showDir" type="number" placeholder="{{data['Numero']}}"></ion-input>
-              <ion-input *ngIf="!showDir" type="number" placeholder="Numero ext."></ion-input>
+              <ion-input *ngIf="showLocalDir" type="number" placeholder="Numero ext."></ion-input>
             </ion-col>
             <ion-col size="4">
               <ion-input *ngIf="showDir" type="number" placeholder="{{data['CP']}}"></ion-input>
-              <ion-input *ngIf="!showDir" type="number" placeholder="Ingresa tu codigo postal"></ion-input>
+              <ion-input *ngIf="showLocalDir" type="number" placeholder="Codigo postal"></ion-input>
             </ion-col>
 
             <ion-col size="2">
-              <ion-button color="none" size="small">
+                <ion-button *ngIf="showDir"
+                        color="none" size="small" (click)="deleteDir()">
+                  <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+                </ion-button>
+              <ion-button *ngIf="showLocalDir"
+                      color="none" size="small" (click)="deleteDir()">
                 <ion-icon name="close-circle-outline" color="danger"></ion-icon>
               </ion-button>
             </ion-col>
@@ -166,15 +171,15 @@
             </ion-col>
             <ion-col size="5">
               <ion-input *ngIf="showDir" type="text" placeholder="{{data['Calle']}}"></ion-input>
-              <ion-input *ngIf="!showDir" type="text" placeholder="Calle"></ion-input>
+              <ion-input *ngIf="showLocalDir" type="text" placeholder="Calle"></ion-input>
             </ion-col>
             <ion-col size="3">
               <ion-input *ngIf="showDir" type="text" placeholder="{{data['Ciudad']}}"></ion-input>
-              <ion-input *ngIf="!showDir" type="text" placeholder="Ciudad"></ion-input>
+              <ion-input *ngIf="showLocalDir" type="text" placeholder="Ciudad"></ion-input>
             </ion-col>
             <ion-col size="3">
               <ion-input *ngIf="showDir" type="text" placeholder="{{data['Estado']}}"></ion-input>
-              <ion-input *ngIf="!showDir" type="text" placeholder="Estado"></ion-input>
+              <ion-input *ngIf="showLocalDir" type="text" placeholder="Estado"></ion-input>
             </ion-col>
           </form>
         </ion-row>
@@ -185,7 +190,7 @@
       </ion-col>
       <ion-col>
         <ion-button fill="clear" expand="full" size="small"
-                    class="ion-text-capitalize">Añadir Correo</ion-button>
+                    class="ion-text-capitalize" (click)="addCorreo()">Añadir Correo</ion-button>
       </ion-col>
     </ion-row>
 
@@ -195,11 +200,16 @@
         <ion-col size="1"></ion-col>
         <ion-col size="8">
           <ion-input *ngIf="data2['Correo'] !== ''" type="correo" placeholder="{{data2['Correo']}}"></ion-input>
-          <ion-input *ngIf="data2['Correo'] === ''" type="correo" placeholder="Ingresa tu correo"></ion-input>
+          <ion-input *ngIf="showLocalCorreo" type="correo" placeholder="Ingresa tu correo"></ion-input>
         </ion-col>
 
         <ion-col size="2">
-          <ion-button color="none"  size="small">
+          <ion-button *ngIf="data2['Correo'] !== ''"
+                  color="none"  size="small" (click)="deleteCorreo()">
+            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+          </ion-button>
+          <ion-button *ngIf="showLocalCorreo"
+                  color="none"  size="small" (click)="deleteCorreo()">
             <ion-icon name="close-circle-outline" color="danger"></ion-icon>
           </ion-button>
         </ion-col>
@@ -212,7 +222,7 @@
       </ion-col>
       <ion-col>
         <ion-button fill="clear" expand="full" size="small"
-                    class="ion-text-capitalize">Fecha</ion-button>
+                    class="ion-text-capitalize" (click)="addFecha()">Fecha</ion-button>
       </ion-col>
     </ion-row>
 
@@ -226,7 +236,7 @@
                           doneText='Hecho' cancel-text="Cancelar"
                           placeholder="{{fechaData['Fecha']}}" max="2070-12-31"
                           ></ion-datetime>
-            <ion-datetime *ngIf="!showfecha"
+            <ion-datetime *ngIf="showLocalFecha"
                           displayFormat="DD MMM YYYY" min="1900-01-00"
                           doneText='Hecho' cancel-text="Cancelar"
                           placeholder="Pulsa Aquí" max="2070-12-31"
@@ -235,18 +245,25 @@
 
         </ion-col>
         <ion-col size="4">
-          <ion-select *ngIf="showfecha" placeholder="{{fechaData['Tipo']}}">
-            <ion-select *ngIf="!showfecha" placeholder="Tipo" >
+          <ion-select *ngIf="showfecha" placeholder="{{fechaData['tipo_Fecha']}}">
             <ion-label>Tipo</ion-label>
             <ion-select-option value="Cumpleaños">Cumpleaños</ion-select-option>
             <ion-select-option value="Recordatorio">Recordatorio</ion-select-option>
             <ion-select-option value="Aniversario">Aniversario</ion-select-option>
-            </ion-select>
+          </ion-select>
+          <ion-select *ngIf="showLocalFecha" placeholder="Tipo" >
+            <ion-label>Tipo</ion-label>
+            <ion-select-option value="Cumpleaños">Cumpleaños</ion-select-option>
+            <ion-select-option value="Recordatorio">Recordatorio</ion-select-option>
+            <ion-select-option value="Aniversario">Aniversario</ion-select-option>
           </ion-select>
         </ion-col>
 
         <ion-col size="2">
-          <ion-button color="none" size="small">
+          <ion-button color="none" size="small" *ngIf="showfecha">
+            <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+          </ion-button>
+          <ion-button color="none" size="small" *ngIf="showLocalFecha">
             <ion-icon name="close-circle-outline" color="danger"></ion-icon>
           </ion-button>
         </ion-col>
@@ -254,8 +271,8 @@
       <form >
         <ion-col size="1"></ion-col>
         <ion-col size="10">
-          <ion-textarea *ngIf="!showfecha" placeholder="Descripción"></ion-textarea>
-          <ion-textarea *ngIf="showfecha" placeholder="{{fechaData['Descripcion']}}"></ion-textarea>
+          <ion-textarea *ngIf="showfecha" placeholder="Descripción"></ion-textarea>
+          <ion-textarea *ngIf="showLocalFecha" placeholder="{{fechaData['Descripcion']}}"></ion-textarea>
         </ion-col>
         <ion-col size="1"></ion-col>
       </form>

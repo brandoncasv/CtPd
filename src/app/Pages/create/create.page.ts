@@ -9,7 +9,6 @@ import {TelefonoService} from "../../Services/telefono.service";
 import {DireccionService} from "../../Services/direccion.service";
 import {FechaService} from "../../Services/fecha.service";
 import { ActionSheetController } from '@ionic/angular';
-import {strategy} from "@angular-devkit/core/src/experimental/jobs";
 
 @Component({
   selector: 'app-create',

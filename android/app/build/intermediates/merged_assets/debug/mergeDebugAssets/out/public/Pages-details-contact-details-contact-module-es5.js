@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons >\n      <ion-back-button defaultHref=\"/\" color=\"primary\"></ion-back-button>\n    </ion-buttons>\n    <ion-button slot=\"end\" color=\"none\" (click)=\"delete_Contact()\">\n      <ion-icon name=\"trash\" color=\"primary\"></ion-icon>\n    </ion-button>\n    <ion-button (click)=\"asignData()\" color=\"none\" slot=\"end\">\n      <ion-icon name=\"brush\" color=\"primary\"></ion-icon>\n    </ion-button>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content >\n  <ion-grid >\n    <ion-row class=\"ion-justify-content-center\" >\n      <ion-col size=\"8\" >\n        <ion-avatar >\n          <h1 class=\"nombre_Avatar\">{{ (contact | async)?.Nombre.charAt(0).toLocaleUpperCase() }}</h1>\n          <h1 class=\"apellido_Avatar\" *ngIf=\"(contact | async)?.Apellidos !== ''\">\n            {{ (contact | async)?.Apellidos.charAt(0).toLocaleUpperCase() }}</h1>\n        </ion-avatar>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"ion-justify-content-center\">\n        <h2>{{ (contact | async)?.Nombre }} {{ (contact | async)?.Apellidos }}</h2>\n    </ion-row>\n\n    <ng-container *ngFor=\"let cell of cell\" >\n      <ion-button expand=\"block\" color=\"dark\" *ngIf=\"cell.Telefono !== '' \">\n        <ion-grid>\n          <ion-row>\n            <ion-col size=\"1\">\n              <ion-icon name=\"call\"></ion-icon>\n            </ion-col>\n            <ion-col size=\"10\" >\n              <h6 class=\"firs-label\">\n                {{ cell.Telefono.toString().substring(0, 3)}}\n                {{ cell.Telefono.toString().substring(3, 6)}}\n                {{ cell.Telefono.toString().substring(6, 10)}}</h6>\n              <h6 class=\"second-label\">{{cell.tipo_Telefono.toLocaleUpperCase()}}</h6>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-button>\n    </ng-container>\n  <ng-container *ngFor=\"let addres of address\">\n    <ion-button expand=\"block\" color=\"dark\" *ngIf=\"addres.Calle !== null \">\n      <ion-grid>\n        <ion-row>\n          <ion-col size=\"1\">\n            <ion-icon name=\"pin\"></ion-icon>\n          </ion-col>\n          <ion-col size=\"10\" >\n            <h6 class=\"firs-label\">{{  addres.Calle }} {{ addres.Ciudad }}</h6>\n            <h6 class=\"second-label\">{{  addres.Estado }} {{  addres.CP }}</h6>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-button>\n  </ng-container>\n      <ion-button expand=\"block\" color=\"dark\" *ngIf=\"(contact | async)?.Correo !== '' \">\n        <ion-grid>\n          <ion-row>\n            <ion-col size=\"1\">\n              <ion-icon name=\"mail\"></ion-icon>\n            </ion-col>\n\n            <ion-col class =\"correo\" size=\"11\" >\n              <h6>{{  (contact | async)?.Correo }} </h6>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-button>\n\n  <ng-container *ngFor=\"let fecha of fechas\">\n    <ion-button expand=\"block\" color=\"dark\" *ngIf=\"fecha.Fecha !== null\">\n      <ion-grid>\n        <ion-row>\n          <ion-col size=\"1\">\n            <ion-icon name=\"bookmarks\"></ion-icon>\n          </ion-col>\n          <ion-col size=\"10\" >\n            <h6 class=\"firs-label\">{{ fecha.Fecha.substring(0, 10) }} {{fecha.Descripcion}}</h6>\n            <h6 class=\"firs-label\"> {{ fecha.tipo_Fecha }}</h6>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <p>{{fecha.Descripcion}}</p>\n        </ion-row>\n      </ion-grid>\n    </ion-button>\n  </ng-container>\n\n  </ion-grid>\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons >\n      <ion-back-button defaultHref=\"/\" color=\"primary\"></ion-back-button>\n    </ion-buttons>\n    <ion-button slot=\"end\" color=\"none\" (click)=\"delete_Contact()\">\n      <ion-icon name=\"trash\" color=\"primary\"></ion-icon>\n    </ion-button>\n    <ion-button (click)=\"asignData()\" color=\"none\" slot=\"end\">\n      <ion-icon name=\"brush\" color=\"primary\"></ion-icon>\n    </ion-button>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content >\n  <ion-grid >\n    <ion-row class=\"ion-justify-content-center\" >\n      <ion-col size=\"8\" >\n        <ion-avatar >\n          <h1 class=\"nombre_Avatar\">{{ (contact | async)?.Nombre.charAt(0).toLocaleUpperCase() }}</h1>\n          <h1 class=\"apellido_Avatar\" *ngIf=\"(contact | async)?.Apellidos !== ''\">\n            {{ (contact | async)?.Apellidos.charAt(0).toLocaleUpperCase() }}</h1>\n        </ion-avatar>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"ion-justify-content-center\">\n        <h2>{{ (contact | async)?.Nombre }} {{ (contact | async)?.Apellidos }}</h2>\n    </ion-row>\n\n    <ng-container *ngFor=\"let cell of cell\" >\n      <ion-button expand=\"block\" color=\"dark\" *ngIf=\"cell.Telefono !== null \">\n        <ion-grid>\n          <ion-row>\n            <ion-col size=\"1\">\n              <ion-icon name=\"call\"></ion-icon>\n            </ion-col>\n            <ion-col size=\"10\" >\n              <h6 class=\"firs-label\">\n                {{ cell.Telefono.toString().substring(0, 3)}}\n                {{ cell.Telefono.toString().substring(3, 6)}}\n                {{ cell.Telefono.toString().substring(6, 10)}}</h6>\n              <h6 class=\"second-label\">{{cell.tipo_Telefono.toLocaleUpperCase()}}</h6>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-button>\n    </ng-container>\n  <ng-container *ngFor=\"let addres of address\">\n    <ion-button expand=\"block\" color=\"dark\" *ngIf=\"addres.Calle !== null \">\n      <ion-grid>\n        <ion-row>\n          <ion-col size=\"1\">\n            <ion-icon name=\"pin\"></ion-icon>\n          </ion-col>\n          <ion-col size=\"10\" >\n            <h6 class=\"firs-label\">{{  addres.Calle }} {{ addres.Ciudad }}</h6>\n            <h6 class=\"second-label\">{{  addres.Estado }} {{  addres.CP }}</h6>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-button>\n  </ng-container>\n      <ion-button expand=\"block\" color=\"dark\" *ngIf=\"(contact | async)?.Correo !== '' \">\n        <ion-grid>\n          <ion-row>\n            <ion-col size=\"1\">\n              <ion-icon name=\"mail\"></ion-icon>\n            </ion-col>\n\n            <ion-col class =\"correo\" size=\"11\" >\n              <h6>{{  (contact | async)?.Correo }} </h6>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-button>\n\n  <ng-container *ngFor=\"let fecha of fechas\">\n    <ion-button expand=\"block\" color=\"dark\" *ngIf=\"fecha.Fecha !== null\">\n      <ion-grid>\n        <ion-row>\n          <ion-col size=\"1\">\n            <ion-icon name=\"bookmarks\"></ion-icon>\n          </ion-col>\n          <ion-col size=\"10\" >\n            <h6 class=\"firs-label\">{{ fecha.Fecha.substring(0, 10) }} {{fecha.Descripcion}}</h6>\n            <h6 class=\"firs-label\"> {{ fecha.tipo_Fecha }}</h6>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <p>{{fecha.Descripcion}}</p>\n        </ion-row>\n      </ion-grid>\n    </ion-button>\n  </ng-container>\n\n  </ion-grid>\n</ion-content>\n"
 
 /***/ }),
 
@@ -157,16 +157,38 @@ var DetailsContactPage = /** @class */ (function () {
         });
     };
     DetailsContactPage.prototype.asignData = function () {
-        console.log(this.data);
-        var navigationExtras = {
-            state: {
-                user: this.data,
-                dir: this.address,
-                tel: this.cell,
-                id: this.contact_Id
-            }
-        };
-        this._router.navigate(['edit'], navigationExtras);
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a, _b, _c, navigationExtras;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_d) {
+                switch (_d.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.cell[0]];
+                    case 1:
+                        _a.tel = _d.sent();
+                        _b = this;
+                        return [4 /*yield*/, this.address[0]];
+                    case 2:
+                        _b.dir = _d.sent();
+                        _c = this;
+                        return [4 /*yield*/, this.fechas[0]];
+                    case 3:
+                        _c.fecha = _d.sent();
+                        console.log(this.contact, this.tel);
+                        navigationExtras = {
+                            state: {
+                                user: this.data,
+                                dir: this.dir,
+                                tel: this.tel,
+                                fecha: this.fecha,
+                                id: this.contact_Id
+                            }
+                        };
+                        this._router.navigate(['edit'], navigationExtras);
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     DetailsContactPage.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },

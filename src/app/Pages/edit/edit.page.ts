@@ -22,7 +22,7 @@ export class EditPage implements OnInit {
   private dir_Form: FormGroup; correo_Form: FormGroup;
   private showDir; showCorreo: boolean = false;
   private showfecha; showTel: boolean = false;
-  private showLocalTel; showLocalDir;
+  private showLocalTel; showLocalDir: boolean = false;
   showLocalCorreo; showLocalFecha:boolean = false;
   constructor(private _route: ActivatedRoute,
               private router: Router,
@@ -139,10 +139,42 @@ addTel() {
       '', Validators.minLength(10)));
   this.tel_Form.addControl('tipo_Telefono', new FormControl(
       '', Validators.maxLength(10)));
-  console.log(this.tel_Form.value)
+  console.log(this.tel_Form)
   }
   deleteTel() {
     this.showLocalTel = false;
   }
-
+  addDir() {
+    this.showLocalDir = true;
+    this.dir_Form.addControl('Calle', new FormControl(
+        '', Validators.minLength(10)));
+    this.dir_Form.addControl('Ciudad', new FormControl(
+        '', Validators.maxLength(10)));
+    this.dir_Form.addControl('Estado', new FormControl(
+        '', Validators.maxLength(10)));
+    this.dir_Form.addControl('Numero', new FormControl(
+        '', Validators.maxLength(10)));
+    this.dir_Form.addControl('CP', new FormControl(
+        '', Validators.maxLength(10)));
+    console.log(this.dir_Form);
+  }
+  deleteDir() {
+    this.showLocalTel = false;
+  }
+  addCorreo() {
+    this.showLocalCorreo = true;
+    this.correo_Form.addControl('Correo', new FormControl(''));
+  }
+  deleteCorreo() {
+    this.showLocalCorreo = false;
+  }
+  addFecha() {
+    this.showLocalFecha = true;
+    this.fecha_Form.addControl('Descripcion', new FormControl(''));
+    this.fecha_Form.addControl('Fecha', new FormControl(''));
+    this.fecha_Form.addControl('tipo_Fecha', new FormControl(''));
+  }
+  deleteFecha() {
+    this.showLocalFecha = false;
+  }
 }

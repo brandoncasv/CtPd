@@ -62,27 +62,54 @@ ion-content {
     padding: 0 0 0 0;
   }
 
+  /*
+    form > ion-row > ion-col > ion-item {
+      display: -webkit-inline-flex;
+      position: relative;
+      width: 100%;
+      max-height: 38px;
+      padding: 0 0 0 0;
+    }
+    */
+    form > ion-row > ion-col > ion-item > ion-select {
+      max-width: 100%;
+      width: 100%;
+      padding: 0 0 10px 0;
+      text-align: center;
 
-  form > ion-row > ion-col > ion-item {
-    display: -webkit-inline-flex;
-    position: relative;
-    width: 100%;
-    max-height: 38px;
-  }
+      :host(.item-interactive), :host(.item-lines-full) {
+        --border-width: 0 0 1px 0;
+        --show-full-highlight: 1;
+        --show-inset-highlight: 1;
+      }
+    }
+  ion-row > form > ion-col > ion-item {
+    height: 36px;
+    padding: 0 0 0 0;
+    --inner-padding-bottom: 0;
+    --inner-padding-end: 0;
+    --inner-padding-start: 0;
+    --inner-padding-top: 0;
+    --padding-bottom: 0;
+    --padding-end: 0;
+    --padding-start: 0;
+    --padding-top: 0;
+    ion-select {
+      max-width: 100%;
+      width: 100%;
+      padding: 0 0 10px 0;
+      text-align: start;
+      
+      button {
+        padding: 0 0 0 0;
+        :host {
+          height: 36px;
 
-  form > ion-row > ion-col > ion-item > ion-select {
-    max-width: 100%;
-    width: 100%;
-    padding: 0 0 10px 0;
-    text-align: center;
+        }
+        }
 
-    :host(.item-interactive), :host(.item-lines-full) {
-      --border-width: 0 0 1px 0;
-      --show-full-highlight: 1;
-      --show-inset-highlight: 1;
     }
   }
-
   form > ion-row > ion-col > ion-col > ion-label {
     position: absolute;
     padding-bottom: 10px;

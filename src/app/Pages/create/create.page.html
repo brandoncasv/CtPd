@@ -45,8 +45,8 @@
 
         <ion-col size="6">
           <ion-item>
-              <ion-label>Circulo</ion-label>
               <ion-select formControlName="Circulo" placeholder="Circulo">
+                <ion-label>Circulo</ion-label>
                 <ion-select-option value="Otros">Otros</ion-select-option>
                 <ion-select-option value="Amigos">Amigos</ion-select-option>
                 <ion-select-option value="Trabajo">Trabajo</ion-select-option>
@@ -95,12 +95,16 @@
           </ion-col>
 
          <ion-col size="3">
-              <ion-select formControlName="tipo_Telefono" placeholder="Tipo">
-                <ion-label>Tipo</ion-label>
-                <ion-select-option value="movil">Movil</ion-select-option>
-                <ion-select-option value="casa">Casa</ion-select-option>
-                <ion-select-option value="trabajo">Trabajo</ion-select-option>
-              </ion-select>
+           <ion-item>
+             <ion-select formControlName="tipo_Telefono" placeholder="Tipo">
+               <ion-label>Tipo</ion-label>
+
+               <ion-select-option value="movil">Movil</ion-select-option>
+               <ion-select-option value="casa">Casa</ion-select-option>
+               <ion-select-option value="trabajo">Trabajo</ion-select-option>
+             </ion-select>
+           </ion-item>
+
           </ion-col>
 
           <ion-col size="2">
@@ -212,12 +216,14 @@
 
         </ion-col>
         <ion-col size="4">
-          <ion-select formControlName="tipo_Fecha" placeholder="Tipo">
-            <ion-label>Tipo</ion-label>
-            <ion-select-option value="Cumpleaños">Cumpleaños</ion-select-option>
-            <ion-select-option value="Recordatorio">Recordatorio</ion-select-option>
-            <ion-select-option value="Aniversario">Aniversario</ion-select-option>
-          </ion-select>
+          <ion-item>
+            <ion-select formControlName="tipo_Fecha" placeholder="Tipo">
+              <ion-label>Tipo</ion-label>
+              <ion-select-option value="Cumpleaños">Cumpleaños</ion-select-option>
+              <ion-select-option value="Recordatorio">Recordatorio</ion-select-option>
+              <ion-select-option value="Aniversario">Aniversario</ion-select-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
 
         <ion-col size="2">

@@ -43,7 +43,7 @@ export class HomePage implements OnInit {
         if (texto === '') {
             this.change_State = false;
         }
-        if (texto != '') {
+        if (texto !== '') {
             this.change_State = true;
         }
     }

@@ -67,7 +67,7 @@ export class DetailsContactPage implements OnInit {
          this.tel = await this.cell[0];
          this.dir = await this.address[0];
          this.fecha = await this.fechas[0];
-         console.log(this.contact, this.tel);
+         console.log( this.tel);
        let navigationExtras: NavigationExtras = {
         state: {
             user: this.data,
@@ -77,7 +77,7 @@ export class DetailsContactPage implements OnInit {
             id: this.contact_Id
         }
       };
-      this._router.navigate(['edit'], navigationExtras);
+      await this._router.navigate(['edit'], navigationExtras);
   }
 
 }

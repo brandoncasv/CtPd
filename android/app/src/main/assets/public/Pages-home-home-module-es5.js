@@ -117,7 +117,7 @@ var HomePage = /** @class */ (function () {
         if (texto === '') {
             this.change_State = false;
         }
-        if (texto != '') {
+        if (texto !== '') {
             this.change_State = true;
         }
     };

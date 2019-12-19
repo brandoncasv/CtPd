@@ -113,7 +113,7 @@ let HomePage = class HomePage {
         if (texto === '') {
             this.change_State = false;
         }
-        if (texto != '') {
+        if (texto !== '') {
             this.change_State = true;
         }
     }
