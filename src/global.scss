@@ -29,3 +29,10 @@
   border-radius: 16px !important;
   max-width: 100%;
 }
+
+ion-select {
+  button {
+    display: flex;
+    max-height: 36px;
+  }
+}

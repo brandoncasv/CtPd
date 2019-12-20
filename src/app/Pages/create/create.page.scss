@@ -94,22 +94,24 @@ ion-content {
     --padding-end: 0;
     --padding-start: 0;
     --padding-top: 0;
-    ion-select {
-      max-width: 100%;
-      width: 100%;
-      padding: 0 0 10px 0;
-      text-align: start;
+      ion-select {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 0 10px 0;
+        text-align: start;
       
       button {
-        padding: 0 0 0 0;
-        :host {
-          height: 36px;
+        height: 0;
+          :host {
+            display: flex;
 
-        }
-        }
+            height: 36px;
+            padding: 0 0 0 0;
 
+          }
+        }
+      }
     }
-  }
   form > ion-row > ion-col > ion-col > ion-label {
     position: absolute;
     padding-bottom: 10px;
