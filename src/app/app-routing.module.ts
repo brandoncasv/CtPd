@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'details-contact/:id', loadChildren: './Pages/details-contact/details-contact.module#DetailsContactPageModule' },
   { path: 'details-contact', loadChildren: './Pages/details-contact/details-contact.module#DetailsContactPageModule' },
   { path: 'edit', loadChildren: './Pages/edit/edit.module#EditPageModule' },
+  { path: 'register', loadChildren: './Pages/register/register.module#RegisterPageModule' },
 ];
 
 @NgModule({

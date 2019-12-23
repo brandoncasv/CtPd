@@ -33,5 +33,11 @@ export class FechaService {
             })
           }));
   }
+  deleteFecha(id:string) {
+      return this.fechas_Collection.doc(id).delete();
+  }
+  updateFecha(fecha: Fecha, id: string) {
+      return this.fechas_Collection.doc(id).update(fecha);
+  }
 
 }

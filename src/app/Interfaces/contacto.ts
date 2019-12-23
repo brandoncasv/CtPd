@@ -28,6 +28,7 @@ export interface Fecha {
     id_Contacto:string,
     Fecha: string,
     tipo_Fecha: string,
+    id: string,
 }
 
 

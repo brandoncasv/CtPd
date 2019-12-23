@@ -7,6 +7,8 @@ import {Observable} from "rxjs";
 import {DireccionService} from "../../Services/direccion.service";
 import {LoadingController, NavController} from "@ionic/angular";
 import {FechaService} from "../../Services/fecha.service";
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-details-contact',
@@ -28,7 +30,8 @@ export class DetailsContactPage implements OnInit {
               private _loadingController: LoadingController,
               private _nav: NavController,
               private _router: Router,
-              private _fecha: FechaService) { }
+              private _fecha: FechaService,
+              private _alert: AlertController) { }
 
   ngOnInit() {
     this.contact_Id = this.route.snapshot.params['id'];
@@ -53,6 +56,8 @@ export class DetailsContactPage implements OnInit {
     await this.cell.filter(check => {
       if (check.id_Contacto !== '') {
         this._telefono.delete_Telefono(check.id);
+          this._nav.navigateForward('/');
+
       }
     });
      await this.address.filter(check => {
@@ -61,8 +66,34 @@ export class DetailsContactPage implements OnInit {
         this._nav.navigateForward('/');
       }
     });
+      this.fechas.filter(check => {
+         if (check.id_Contacto !== '') {
+             this._fecha.deleteFecha(check.id);
+         }
+     });
 
   }
+    async presentAlert() {
+        const alert = await this._alert.create({
+            header: '¿Estas seguro de borrar el contacto ?',
+            message: 'Esto eliminara el contacto para siempre',
+            buttons: [{
+                text: 'Cancelar',
+                role: 'cancel',
+                cssClass: 'secondary',
+                handler: () => {
+                    console.log('Confirm Cancel');
+                }
+            }, {
+                text: 'Aceptar',
+                handler: () => {
+                    this.delete_Contact();
+                 }
+            }]
+        });
+
+        await alert.present();
+    }
    async asignData() {
          this.tel = await this.cell[0];
          this.dir = await this.address[0];
