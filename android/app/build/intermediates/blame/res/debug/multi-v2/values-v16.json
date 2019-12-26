@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "/root/.gradle/caches/transforms-2/files-2.1/e80327cc5b6d14150f74585b4aa35cdb/support-compat-28.0.0/res/values-v16/values-v16.xml",

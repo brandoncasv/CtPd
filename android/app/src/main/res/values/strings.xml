@@ -4,4 +4,6 @@
     <string name="title_activity_main">CtPd</string>
     <string name="package_name">io.ionic.starter</string>
     <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="server_client_id">Your Web Client Key</string>
+
 </resources>

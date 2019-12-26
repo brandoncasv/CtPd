@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+            "outputFile": "/home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
             "map": [
                 {
                     "source": "/root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/res/values-km/values.xml",

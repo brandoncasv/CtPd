@@ -401,65 +401,6 @@ var findCheckedOption = function (el, tagName) {
 
 
 
-/***/ }),
-
-/***/ "./src/app/Services/fecha.service.ts":
-/*!*******************************************!*\
-  !*** ./src/app/Services/fecha.service.ts ***!
-  \*******************************************/
-/*! exports provided: FechaService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FechaService", function() { return FechaService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-
-
-
-
-
-var FechaService = /** @class */ (function () {
-    function FechaService(_fs, _fa) {
-        this._fs = _fs;
-        this._fa = _fa;
-        this.fechas_Collection = _fs.collection('Fecha');
-    }
-    FechaService.prototype.addFecha = function (fechaForm) {
-        return this.fechas_Collection.add(fechaForm);
-    };
-    FechaService.prototype.getFecha = function (id) {
-        this.fecha_Collection = this._fs.collection('Fecha', function (ref) {
-            return ref.where('id_Contacto', '==', id);
-        });
-        return this.fwchas_Contacs = this.fecha_Collection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (actions) {
-            return actions.map(function (a) {
-                var data = a.payload.doc.data();
-                var id = a.payload.doc.id;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({ id: id }, data);
-            });
-        }));
-    };
-    FechaService.ctorParameters = function () { return [
-        { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] },
-        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"] }
-    ]; };
-    FechaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
-            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"]])
-    ], FechaService);
-    return FechaService;
-}());
-
-
-
 /***/ })
 
 }]);

@@ -1,27 +1,31 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:34:9-42:20
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:34:9-42:20
 	android:grantUriPermissions
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:38:13-47
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:38:13-47
 	android:authorities
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:36:13-64
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:36:13-64
 	android:exported
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:37:13-37
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:35:13-67
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:35:13-67
 manifest
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-MERGED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-36:12
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+MERGED from [:codetrix-studio-capacitor-google-auth] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@codetrix-studio/capacitor-google-auth/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-36:12
 MERGED from [com.android.support:design:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/b1d8b4b40a44b6d16bbcc853f378a37d/design-28.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/15035ed350d43f07aebe9cead70486b2/appcompat-v7-28.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [:capacitor-cordova-android-plugins] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:capacitor-cordova-android-plugins] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:17:1-47:12
 MERGED from [com.google.firebase:firebase-common:17.0.0] /root/.gradle/caches/transforms-2/files-2.1/aafec493631f80fa60edebbbea47927f/firebase-common-17.0.0/AndroidManifest.xml:2:1-19:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /root/.gradle/caches/transforms-2/files-2.1/04f9f2d42fbc507a9808da43c2ca98c6/play-services-auth-api-phone-16.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /root/.gradle/caches/transforms-2/files-2.1/4de4261ca5cd2d75d490854b7bdfeb78/play-services-auth-base-16.0.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/e6735faf3cff0e5d30a0d5a32096a811/firebase-iid-interop-16.0.1/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/e3099342a38a00991a155aa8c41ed241/play-services-base-16.0.1/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/baa96d158215520aba908907d482460a/play-services-tasks-16.0.1/AndroidManifest.xml:2:1-9:12
@@ -60,33 +64,35 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] /root/.gradle/caches/transfo
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /root/.gradle/caches/transforms-2/files-2.1/37e0a6c1113fc8383af85abbb988698f/livedata-core-1.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /root/.gradle/caches/transforms-2/files-2.1/4ca1c6d7c7e5831f597a26eb6b89598e/runtime-1.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:7.0.0] /root/.gradle/caches/transforms-2/files-2.1/3faebe4d18d3de5e569776c28e897461/framework-7.0.0/AndroidManifest.xml:20:1-27:12
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
 	package
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:3:5-37
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:3:5-37
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:1-63:12
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:5:5-43:19
-MERGED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
-MERGED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:5:5-43:19
+MERGED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
+MERGED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
 MERGED from [com.android.support:design:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/b1d8b4b40a44b6d16bbcc853f378a37d/design-28.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/b1d8b4b40a44b6d16bbcc853f378a37d/design-28.0.0/AndroidManifest.xml:22:5-20
-MERGED from [:capacitor-cordova-android-plugins] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-13:19
-MERGED from [:capacitor-cordova-android-plugins] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-13:19
+MERGED from [:capacitor-cordova-android-plugins] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-13:19
+MERGED from [:capacitor-cordova-android-plugins] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-13:19
 MERGED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:28:5-45:19
 MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:28:5-45:19
 MERGED from [com.google.firebase:firebase-common:17.0.0] /root/.gradle/caches/transforms-2/files-2.1/aafec493631f80fa60edebbbea47927f/firebase-common-17.0.0/AndroidManifest.xml:11:5-17:19
@@ -114,119 +120,97 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /root/.gradle/cache
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/e80327cc5b6d14150f74585b4aa35cdb/support-compat-28.0.0/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:11:9-40
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:11:9-40
 activity#io.ionic.starter.MainActivity
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:13:9-32:20
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:13:9-32:20
 	android:label
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:16:13-56
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:16:13-56
 	android:launchMode
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:18:13-44
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:18:13-44
 	android:configChanges
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:14:13-90
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:14:13-90
 	android:theme
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:17:13-62
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:17:13-62
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:15:13-57
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:15:13-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:20:13-23:29
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:20:13-23:29
 action#android.intent.action.MAIN
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:21:17-69
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:22:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/custom_url_scheme
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:25:13-30:29
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:25:13-30:29
 action#android.intent.action.VIEW
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:26:17-69
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:26:25-66
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:26:25-66
 category#android.intent.category.DEFAULT
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:27:17-76
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:27:17-76
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:27:27-73
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:27:27-73
 category#android.intent.category.BROWSABLE
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:28:17-78
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:28:17-78
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:28:27-75
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:28:27-75
 data
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:29:17-68
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:29:17-68
 	android:scheme
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:29:23-65
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:29:23-65
 uses-permission#android.permission.INTERNET
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:47:5-67
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:47:5-67
 MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:47:22-64
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:47:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:49:5-79
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:49:5-79
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:49:22-77
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:49:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:50:5-81
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:50:5-81
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:50:22-78
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:52:5-81
-	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:52:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:53:5-79
-	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:53:22-76
-uses-feature#android.hardware.location.gps
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:54:5-66
-	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:54:19-63
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:56:5-79
-MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:22:5-79
-	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:56:22-76
-uses-permission#android.permission.CAMERA
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:59:5-65
-	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:59:22-62
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:61:5-71
-	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:61:22-68
-uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:62:5-79
-	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:62:22-77
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:50:22-78
 uses-sdk
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-MERGED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+MERGED from [:codetrix-studio-capacitor-google-auth] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@codetrix-studio/capacitor-google-auth/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:codetrix-studio-capacitor-google-auth] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@codetrix-studio/capacitor-google-auth/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/b1d8b4b40a44b6d16bbcc853f378a37d/design-28.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/b1d8b4b40a44b6d16bbcc853f378a37d/design-28.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/15035ed350d43f07aebe9cead70486b2/appcompat-v7-28.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /root/.gradle/caches/transforms-2/files-2.1/15035ed350d43f07aebe9cead70486b2/appcompat-v7-28.0.0/AndroidManifest.xml:20:5-44
-MERGED from [:capacitor-cordova-android-plugins] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
-MERGED from [:capacitor-cordova-android-plugins] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:capacitor-cordova-android-plugins] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:capacitor-cordova-android-plugins] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
 MERGED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-common:17.0.0] /root/.gradle/caches/transforms-2/files-2.1/aafec493631f80fa60edebbbea47927f/firebase-common-17.0.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common:17.0.0] /root/.gradle/caches/transforms-2/files-2.1/aafec493631f80fa60edebbbea47927f/firebase-common-17.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /root/.gradle/caches/transforms-2/files-2.1/04f9f2d42fbc507a9808da43c2ca98c6/play-services-auth-api-phone-16.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /root/.gradle/caches/transforms-2/files-2.1/04f9f2d42fbc507a9808da43c2ca98c6/play-services-auth-api-phone-16.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /root/.gradle/caches/transforms-2/files-2.1/4de4261ca5cd2d75d490854b7bdfeb78/play-services-auth-base-16.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /root/.gradle/caches/transforms-2/files-2.1/4de4261ca5cd2d75d490854b7bdfeb78/play-services-auth-base-16.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/e6735faf3cff0e5d30a0d5a32096a811/firebase-iid-interop-16.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/e6735faf3cff0e5d30a0d5a32096a811/firebase-iid-interop-16.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/e3099342a38a00991a155aa8c41ed241/play-services-base-16.0.1/AndroidManifest.xml:20:5-44
@@ -303,68 +287,90 @@ MERGED from [android.arch.core:runtime:1.1.1] /root/.gradle/caches/transforms-2/
 MERGED from [android.arch.core:runtime:1.1.1] /root/.gradle/caches/transforms-2/files-2.1/4ca1c6d7c7e5831f597a26eb6b89598e/runtime-1.1.1/AndroidManifest.xml:20:5-44
 MERGED from [org.apache.cordova:framework:7.0.0] /root/.gradle/caches/transforms-2/files-2.1/3faebe4d18d3de5e569776c28e897461/framework-7.0.0/AndroidManifest.xml:25:5-44
 MERGED from [org.apache.cordova:framework:7.0.0] /root/.gradle/caches/transforms-2/files-2.1/3faebe4d18d3de5e569776c28e897461/framework-7.0.0/AndroidManifest.xml:25:5-44
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v4:26.1.0] /root/.gradle/caches/transforms-2/files-2.1/4392216f94db0401d34995ab24aa09c7/support-v4-26.1.0/AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:39:13-41:64
+ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:39:13-41:64
 	android:resource
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:41:17-51
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:41:17-51
 	android:name
-		ADDED from /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:40:17-67
+		ADDED from /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/src/main/AndroidManifest.xml:40:17-67
 uses-feature#android.hardware.camera
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-13:36
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-13:36
 	android:required
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-33
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-33
 	android:name
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-47
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-47
 service#com.getcapacitor.plugin.background.BackgroundTaskService
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:40
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:40
 	android:exported
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
 	android:name
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-84
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-84
 receiver#com.getcapacitor.plugin.notification.TimedNotificationPublisher
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:9-100
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:9-100
 	android:name
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:19-97
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:19-97
 receiver#com.getcapacitor.plugin.notification.NotificationDismissReceiver
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:9-101
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:9-101
 	android:name
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:19-98
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:19-98
 meta-data#firebase_messaging_auto_init_enabled
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-25:37
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-25:37
 	android:value
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-34
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-34
 	android:name
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-64
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-64
 service#com.getcapacitor.CapacitorFirebaseMessagingService
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:9-33:19
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:9-33:19
 	android:stopWithTask
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-41
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-41
 	android:name
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-78
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-78
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:13-32:29
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:13-32:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:17-78
+ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:17-78
 	android:name
-		ADDED from [:capacitor-android] /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:25-75
+		ADDED from [:capacitor-android] /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:25-75
 service#com.google.firebase.messaging.FirebaseMessagingService
 ADDED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:28:9-34:19
 	android:exported
 		ADDED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:30:13-37
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/f0c46a1ccee1100ad2b7e64308a81977/firebase-messaging-18.0.0/AndroidManifest.xml:29:13-82
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /root/.gradle/caches/transforms-2/files-2.1/011b64e1553d6f490cb58194ea36c302/play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:22:22-76
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-iid:18.0.0] /root/.gradle/caches/transforms-2/files-2.1/c9cd65b62769a4782a0cacfdc41e0d87/firebase-iid-18.0.0/AndroidManifest.xml:24:5-68
 	android:name

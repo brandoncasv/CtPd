@@ -2657,6 +2657,68 @@ DireccionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/Services/fecha.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/Services/fecha.service.ts ***!
+  \*******************************************/
+/*! exports provided: FechaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FechaService", function() { return FechaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/es2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+let FechaService = class FechaService {
+    constructor(_fs, _fa) {
+        this._fs = _fs;
+        this._fa = _fa;
+        this.fechas_Collection = _fs.collection('Fecha');
+    }
+    addFecha(fechaForm) {
+        return this.fechas_Collection.add(fechaForm);
+    }
+    getFecha(id) {
+        this.fecha_Collection = this._fs.collection('Fecha', ref => ref.where('id_Contacto', '==', id));
+        return this.fwchas_Contacs = this.fecha_Collection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data();
+                const id = a.payload.doc.id;
+                return Object.assign({ id }, data);
+            });
+        }));
+    }
+    deleteFecha(id) {
+        return this.fechas_Collection.doc(id).delete();
+    }
+    updateFecha(fecha, id) {
+        return this.fechas_Collection.doc(id).update(fecha);
+    }
+};
+FechaService.ctorParameters = () => [
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] },
+    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"] }
+];
+FechaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
+        _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"]])
+], FechaService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/Services/telefono.service.ts":
 /*!**********************************************!*\
   !*** ./src/app/Services/telefono.service.ts ***!

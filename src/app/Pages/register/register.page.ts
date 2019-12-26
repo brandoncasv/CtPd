@@ -108,6 +108,7 @@ export class RegisterPage implements OnInit {
         }, error => {
           this.showMessage("danger", error.message);
         });
+
   }
 
 }

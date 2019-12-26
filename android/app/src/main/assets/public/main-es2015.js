@@ -11,12 +11,10 @@ var map = {
 	"./Pages/create/create.module": [
 		"./src/app/Pages/create/create.module.ts",
 		"default~Pages-create-create-module~Pages-edit-edit-module",
-		"common",
 		"Pages-create-create-module"
 	],
 	"./Pages/details-contact/details-contact.module": [
 		"./src/app/Pages/details-contact/details-contact.module.ts",
-		"common",
 		"Pages-details-contact-details-contact-module"
 	],
 	"./Pages/edit/edit.module": [
@@ -31,6 +29,10 @@ var map = {
 	"./Pages/pruebas/pruebas.module": [
 		"./src/app/Pages/pruebas/pruebas.module.ts",
 		"Pages-pruebas-pruebas-module"
+	],
+	"./Pages/register/register.module": [
+		"./src/app/Pages/register/register.module.ts",
+		"Pages-register-register-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -494,13 +496,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'register', pathMatch: 'full' },
     { path: 'home', loadChildren: './Pages/home/home.module#HomePageModule' },
     { path: 'create', loadChildren: './Pages/create/create.module#CreatePageModule' },
     { path: 'pruebas', loadChildren: './Pages/pruebas/pruebas.module#PruebasPageModule' },
     { path: 'details-contact/:id', loadChildren: './Pages/details-contact/details-contact.module#DetailsContactPageModule' },
     { path: 'details-contact', loadChildren: './Pages/details-contact/details-contact.module#DetailsContactPageModule' },
     { path: 'edit', loadChildren: './Pages/edit/edit.module#EditPageModule' },
+    { path: 'register', loadChildren: './Pages/register/register.module#RegisterPageModule' },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -717,7 +720,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/src/main.ts */"./src/main.ts");
 
 
 /***/ })

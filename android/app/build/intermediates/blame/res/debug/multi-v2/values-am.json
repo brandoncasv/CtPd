@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/bcastillo/Documents/Brandon/WebStorm/Ionic/CtPd/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
+            "outputFile": "/home/boooster/Documents/Kubuntu/Web_Storm/Ionic/CtPd/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
             "map": [
                 {
                     "source": "/root/.gradle/caches/transforms-2/files-2.1/e3099342a38a00991a155aa8c41ed241/play-services-base-16.0.1/res/values-am/values.xml",
